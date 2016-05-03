@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
 -  Service : Level
--  Total tests positifs : 00
--  Total tests negatifs : 00
+-  Total tests : 108
+-          |_ positifs : 50
+-          |_ negatifs : 58
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -263,7 +264,7 @@ Oracle :
 	xExit(L) == xExit(L)@pre
 	yExit(L) == yExit(L)@pre
 --------------------------------------------------------------------------------
-[Test 1.10]: testInit10 | Negatif
+[Test 2.10]: testInit10 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -274,7 +275,7 @@ Oracle :
 		setNature : x < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.11]: testInit11 | Negatif
+[Test 2.11]: testInit11 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -285,7 +286,7 @@ Oracle :
 		setNature : y < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.12]: testInit12 | Negatif
+[Test 2.12]: testInit12 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -296,7 +297,7 @@ Oracle :
 		setNature : x < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.13]: testInit13 | Negatif
+[Test 2.13]: testInit13 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -307,7 +308,7 @@ Oracle :
 		setNature : y < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.14]: testInit14 | Negatif
+[Test 2.14]: testInit14 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -318,7 +319,7 @@ Oracle :
 		setNature : x >= getWidth()
 	}
 --------------------------------------------------------------------------------
-[Test 1.15]: testInit15 | Negatif
+[Test 2.15]: testInit15 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -329,7 +330,7 @@ Oracle :
 		setNature : y >= getHeight()
 	}
 --------------------------------------------------------------------------------
-[Test 1.16]: testInit16 | Negatif
+[Test 2.16]: testInit16 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -340,7 +341,7 @@ Oracle :
 		setNature : x >= getWidth()
 	}
 --------------------------------------------------------------------------------
-[Test 1.17]: testInit17 | Negatif
+[Test 2.17]: testInit17 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -351,7 +352,7 @@ Oracle :
 		setNature : y >= getHeight()
 	}
 --------------------------------------------------------------------------------
-[Test 1.18]: testInit18 | Negatif
+[Test 2.18]: testInit18 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -362,7 +363,7 @@ Oracle :
 		setNature : x < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.19]: testInit19 | Negatif
+[Test 2.19]: testInit19 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -373,7 +374,7 @@ Oracle :
 		setNature : y < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.20]: testInit20 | Negatif
+[Test 2.20]: testInit20 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -384,7 +385,7 @@ Oracle :
 		setNature : x < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.21]: testInit21 | Negatif
+[Test 2.21]: testInit21 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -395,7 +396,7 @@ Oracle :
 		setNature : y < 0
 	}
 --------------------------------------------------------------------------------
-[Test 1.22]: testInit22 | Negatif
+[Test 2.22]: testInit22 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -406,7 +407,7 @@ Oracle :
 		setNature : x >= getWidth()
 	}
 --------------------------------------------------------------------------------
-[Test 1.23]: testInit23 | Negatif
+[Test 2.23]: testInit23 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -417,7 +418,7 @@ Oracle :
 		setNature : y >= getHeight()
 	}
 --------------------------------------------------------------------------------
-[Test 1.24]: testInit24 | Negatif
+[Test 2.24]: testInit24 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -428,7 +429,7 @@ Oracle :
 		setNature : x >= getWidth()
 	}
 --------------------------------------------------------------------------------
-[Test 1.25]: testInit25 | Negatif
+[Test 2.25]: testInit25 | Negatif
 
 Conditions initiales :
 	L = init(100,80)
@@ -1356,9 +1357,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 
-	remove(L,0,55)
+	remove(L,1,55)
 Oracle : 
-	nature(L,0,55) = Nature.EMPTY
+	nature(L,1,55) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1375,9 +1376,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 
-	remove(L,99,55)
+	remove(L,98,55)
 Oracle : 
-	nature(L,99,55) = Nature.EMPTY
+	nature(L,98,55) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1413,9 +1414,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 
-	remove(L,46,0)
+	remove(L,46,1)
 Oracle : 
-	nature(L,46,0) = Nature.EMPTY
+	nature(L,46,1) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1432,9 +1433,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 	
-	remove(L,46,79)
+	remove(L,46,78)
 Oracle : 
-	nature(L,46,79) = Nature.EMPTY
+	nature(L,46,78) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1470,9 +1471,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 	
-	remove(L,8,79)
+	remove(L,8,78)
 Oracle : 
-	nature(L,8,79) = Nature.EMPTY
+	nature(L,8,78) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1508,9 +1509,9 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 	
-	remove(L,91,79)
+	remove(L,91,78)
 Oracle : 
-	nature(L,91,79) = Nature.EMPTY
+	nature(L,91,78) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1616,7 +1617,7 @@ Opérations :
 	remove(L,0,55)
 Oracle : 	
 	Exception {
-		remove : x >= 0
+		remove : x <= 0
 	}
 --------------------------------------------------------------------------------
 [Test 5.16]: testRemove16 | Negatif
@@ -1628,9 +1629,419 @@ Opérations :
 	
 	goPlay(L, 8, 11, 91, 77)
 	
-	remove(L,0,55)
+	remove(L,99,55)
 Oracle : 	
 	Exception {
-		remove : x >= 0
+		remove : x >= getWidth()-1
+	}
+--------------------------------------------------------------------------------
+[Test 5.17]: testRemove17 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,46,0)
+Oracle : 	
+	Exception {
+		remove : y <= 0
+	}
+--------------------------------------------------------------------------------
+[Test 5.18]: testRemove18 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,46,79)
+Oracle : 	
+	Exception {
+		remove : y >= getHeight()-1
+	}
+--------------------------------------------------------------------------------
+[Test 5.19]: testRemove19 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,8,11)
+Oracle : 	
+	Exception {
+		remove : x == getXEntrance() && y == getYEntrance()
+	}
+--------------------------------------------------------------------------------
+[Test 5.20]: testRemove20 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,91,77)
+Oracle : 	
+	Exception {
+		remove : x == getXExit() && y == getYExit()
+	}
+--------------------------------------------------------------------------------
+[Test 6]: build
+--------------------------------------------------------------------------------
+[Test 6.1]: testBuild1 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,0,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+
+	build(L,1,55)
+Oracle : 
+	nature(L,1,55) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.2]: testBuild2 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,99,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+
+	build(L,98,55)
+Oracle : 
+	nature(L,98,55) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.3]: testBuild3 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+
+	build(L,46,55)
+Oracle : 
+	nature(L,46,55) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.4]: testBuild4 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,0,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+
+	build(L,46,1)
+Oracle : 
+	nature(L,46,1) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.5]: testBuild5 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,78)
+Oracle : 
+	nature(L,46,78) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.6]: testBuild6 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,46,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,46)
+Oracle : 
+	nature(L,46,46) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.7]: testBuild7 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,8,78)
+Oracle : 
+	nature(L,8,78) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.8]: testBuild8 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,11)
+Oracle : 
+	nature(L,46,11) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.9]: testBuild9 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,91,78)
+Oracle : 
+	nature(L,91,78) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.10]: testBuild10 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,77)
+Oracle : 
+	nature(L,46,77) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.11]: testBuild11 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,8,77)
+Oracle : 
+	nature(L,8,77) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.12]: testBuild12 | Positif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+
+	setNature(L,46,79,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,91,11)
+Oracle : 
+	nature(L,46,79) = Nature.DIRT
+	isEditing(L) == isEditing(L)@Pre
+	xEntrance(L) == xEntrance(L)@pre
+	yEntrance(L) == yEntrance(L)@pre
+	xExit(L) == xExit(L)@pre
+	yExit(L) == yExit(L)@pre
+--------------------------------------------------------------------------------
+[Test 6.13]: testBuild13 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,55)
+Oracle : 	
+	Exception {
+		build : getNature(x,y) != Nature.EMPTY 
+	}
+--------------------------------------------------------------------------------
+[Test 6.14]: testBuild14 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goEditing()
+	
+	build(L,46,55)
+Oracle : 	
+	Exception {
+		build : isEditing() == false 
+	}
+--------------------------------------------------------------------------------
+[Test 6.15]: testBuild15 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,0,55)
+Oracle : 	
+	Exception {
+		build : x <= 0
+	}
+--------------------------------------------------------------------------------
+[Test 6.16]: testBuild16 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,99,55)
+Oracle : 	
+	Exception {
+		build : x >= getWidth()-1
+	}
+--------------------------------------------------------------------------------
+[Test 6.17]: testBuild17 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,0)
+Oracle : 	
+	Exception {
+		build : y <= 0
+	}
+--------------------------------------------------------------------------------
+[Test 6.18]: testBuild18 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,46,79)
+Oracle : 	
+	Exception {
+		remove : y >= getHeight()-1
+	}
+--------------------------------------------------------------------------------
+[Test 6.19]: testBuild19 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,8,11)
+Oracle : 	
+	Exception {
+		build : x == getXEntrance() && y == getYEntrance()
+	}
+--------------------------------------------------------------------------------
+[Test 6.20]: testBuild20 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.EMPTY)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	build(L,91,77)
+Oracle : 	
+	Exception {
+		build : x == getXExit() && y == getYExit()
 	}
 	
