@@ -12,6 +12,7 @@ public interface IJoueur {
 	int getNbJetonsByComportement(Comportement c);
 	String getName();
 	int maxComportement();
+	IGameEng getGameEng();
 	
 	
 	
@@ -26,12 +27,12 @@ public interface IJoueur {
 	// CONSTRUCTORS ------------------------------------------------------------
 	/**
 	 *  \pre : name != "" && nb > 1
-	 *  \post : getName(init(nom,nb)) = nom 
-	 *  \post : maxComportement(init(nom,nb)) = 4 
-	 *  \post : getJetons(init(nom,nb)) != null
-	 *  \post : getNbJetons(init(nom,nb)) = nb * maxComportement()
+	 *  \post : getName(init(nom,nb,g)) = nom 
+	 *  \post : maxComportement(init(nom,nb,g)) = 4 
+	 *  \post : getJetons(init(nom,nb,g)) != null
+	 *  \post : getNbJetons(init(nom,nb,g)) = nb * maxComportement()
 	*/
-	public void init(String name, int nb);
+	public void init(String name, int nb,IGameEng g);
 	
 	
 	
