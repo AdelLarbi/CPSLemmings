@@ -50,7 +50,7 @@ public class LevelImpl implements ILevel {
 		this.height = y;
 		
 		this.grille = new Nature[width][height];
-		this.editing = true;
+		this.editing = true;//??????
 		
 		this.xEntrance = -1;
 		this.yEntrance = -1;
