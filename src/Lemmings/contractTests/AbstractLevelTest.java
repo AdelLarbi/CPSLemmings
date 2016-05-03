@@ -151,10 +151,80 @@ public abstract class AbstractLevelTest {
 	 * goPlay ------------------------------------------------------------------
 	 */
 	@Test
-	public void level_getPlay_1() {
+	public void level_geoPlay_1() {
 		testLevelGoPlayWith(1, 42, 78, 55);						 					
 	}
-
+	
+	@Test
+	public void level_geoPlay_2() {
+		testLevelGoPlayWith(30, 2, 78, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_3() {
+		testLevelGoPlayWith(30, 41, 2, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_4() {
+		testLevelGoPlayWith(30, 41, 70, 2);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_5() {
+		testLevelGoPlayWith(98, 42, 78, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_6() {
+		testLevelGoPlayWith(30, 77, 79, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_7() {
+		testLevelGoPlayWith(30, 41, 98, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_8() {
+		testLevelGoPlayWith(30, 41, 70, 77);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_9() {
+		testLevelGoPlayWith(90, 55, 20, 26);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_10() {
+		testLevelGoPlayWith(90, 55, 90, 26);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_11() {
+		testLevelGoPlayWith(90, 55, 20, 55);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_12() {
+		testLevelGoPlayWith(55, 64, 64, 64);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_13() {
+		testLevelGoPlayWith(64, 55, 64, 64);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_14() {
+		testLevelGoPlayWith(64, 64, 55, 64);						 					
+	}
+	
+	@Test
+	public void level_geoPlay_15() {
+		testLevelGoPlayWith(64, 64, 64, 55);						 					
+	}
+	
 	private void testLevelGoPlayWith(int xEntrance, int yEntrance, int xExit, int yExit) {
 		
 		level.init(100, 80);
@@ -169,23 +239,86 @@ public abstract class AbstractLevelTest {
 		
 		level.goEditing();
 			
-		level.setNature(1, 41, Nature.EMPTY);
-		level.setNature(1, 42, Nature.EMPTY);
-		level.setNature(1, 43, Nature.EMPTY);
+		level.setNature(xEntrance, yEntrance-1, Nature.EMPTY);
+		level.setNature(xEntrance, yEntrance, Nature.EMPTY);
+		level.setNature(xEntrance, yEntrance+1, Nature.EMPTY);
 		
-		level.setNature(78, 54, Nature.EMPTY);
-		level.setNature(78, 55, Nature.EMPTY);
-		level.setNature(78, 56, Nature.EMPTY);
+		level.setNature(xExit, yExit-1, Nature.METAL);
+		level.setNature(xExit, yExit, Nature.EMPTY);
+		level.setNature(xExit, yExit+1, Nature.EMPTY);
+		
+		Nature[][] getNature_atPre = new Nature[level.getWidth()][level.getHeight()];
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				getNature_atPre[i][j] = level.getNature(i,j);
+			}
+		}
 		
 		level.goPlay(xEntrance, yEntrance, xExit, yExit);
 		
+		boolean error = false;
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				if (getNature_atPre[i][j] != level.getNature(i,j)) {
+					error = true;
+					break;
+				}
+			}
+		}
+		
 		Assert.assertTrue("Test Level GoPlay : ",
-				level.getNature(x, y) == n // FIXME
+				!error
 			 &&	level.isEditing() == false
 			 && level.getXEntrance() == xEntrance
 			 && level.getYEntrance() == yEntrance
-			 && level.getXExit() == xEntrance
-			 && level.getYExit() == yEntrance
+			 && level.getXExit() == xExit
+			 && level.getYExit() == yExit
+		);
+	}
+	
+	/**
+	 * goEditing ---------------------------------------------------------------
+	 */
+	@Test
+	public void level_goEditing_1() {
+		testLevelGoEditing();						 					
+	}
+	
+	private void testLevelGoEditing() {
+		
+		int getXEntrance_atPre = level.getXEntrance();
+		int getYEntrance_atPre = level.getYEntrance();
+		int getXExit_atPre = level.getXExit();
+		int getYExit_atPre = level.getYExit();
+		
+		level.init(100, 80);
+		
+		Nature[][] getNature_atPre = new Nature[level.getWidth()][level.getHeight()];
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				getNature_atPre[i][j] = level.getNature(i,j);
+			}
+		}
+		
+		level.goEditing();
+		
+		boolean error = false;
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				if (getNature_atPre[i][j] != level.getNature(i,j)) {
+					error = true;
+					break;
+				}
+			}
+		}	
+				
+		Assert.assertTrue("Test Level GoEditing : ",
+				!error
+			 && level.isEditing() == true
+			 && level.getXEntrance() == getXEntrance_atPre
+			 && level.getYEntrance() == getYEntrance_atPre
+			 && level.getXExit() == getXExit_atPre
+			 && level.getYExit() == getYExit_atPre
 		);
 	}
 }

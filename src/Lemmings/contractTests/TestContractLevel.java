@@ -126,4 +126,154 @@ public class TestContractLevel extends AbstractLevelTest {
 	public void level_SetNature_25() {						
 		level.setNature(50, 999, Nature.METAL);	
 	}
+	
+	
+	/**
+	 * setNature ---------------------------------------------------------------
+	 * @param xEntrance
+	 * @param yEntrance
+	 * @param xExit
+	 * @param yExit
+	 */	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_16() {
+		prepareGoPlayTest(Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);	
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_17() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 11, 91, 77);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_18() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(0, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_19() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(99, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_20() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 0, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_21() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 79, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_22() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 11, 0, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_23() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 79, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_24() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 11, 91, 0);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_25() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 11, 91, 79);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_26() {
+		prepareGoPlayTest(Nature.METAL);
+		level.goPlay(8, 11, 8, 11);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_27() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(8,10,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_28() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(8,11,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_29() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(8,12,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_30() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(91,76,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_31() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(91,77,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_getPlay_32() {
+		prepareGoPlayTest(Nature.METAL);
+		level.setNature(91,78,Nature.DIRT);
+		level.goPlay(8, 11, 91, 77);
+	}
+	
+	private void prepareGoPlayTest(Nature nature) {
+		
+		level.init(100, 80);
+		
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				if (i == 0 || j == level.getHeight() -1 || i == level.getWidth() -1 || j == 0) {
+					level.setNature(i, j, nature);
+				}
+			}
+		}
+		
+		level.goEditing();
+		
+		level.setNature(8, 10, Nature.EMPTY);
+		level.setNature(8, 11, Nature.EMPTY);
+		level.setNature(8, 12, Nature.EMPTY);
+		
+		level.setNature(91, 76, Nature.METAL);
+		level.setNature(91, 77, Nature.EMPTY);
+		level.setNature(91, 78, Nature.EMPTY);
+	}
+	
+	/**
+	 * goEditing ---------------------------------------------------------------
+	 * @no @param
+	 */	
+	@Test(expected=PreConditionError.class)
+	public void level_getEditing_2() {
+		level.goEditing();
+		level.goEditing();	
+	}
 }

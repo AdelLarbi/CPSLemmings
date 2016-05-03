@@ -142,7 +142,7 @@ public class LevelContract extends LevelDecorator {
 	@Override
 	public void goPlay(int xEntrance, int yEntrance, int xExit, int yExit) {
 		try {
-			Nature[][] getNature_atPre = null;
+			Nature[][] getNature_atPre = new Nature[getWidth()][getHeight()];
 			for (int y = 0; y < getHeight(); y++) {	
 				for (int x = 0; x < getWidth(); x++) {
 					getNature_atPre[x][y] = getNature(x, y);
@@ -196,7 +196,7 @@ public class LevelContract extends LevelDecorator {
 		if (!(yExit < getHeight()-1)) {
 			throw new PreConditionError("goPlay : yExit >= getHeight()-1");
 		}
-		if (!(xEntrance != xExit && yEntrance != yExit)) {
+		if (xEntrance == xExit && yEntrance == yExit) {
 			throw new PreConditionError("goPlay : xEntrance == xExit && yEntrance == yExit");
 		}
 		if (!(getNature(xEntrance,yEntrance) == Nature.EMPTY)) {
@@ -256,7 +256,7 @@ public class LevelContract extends LevelDecorator {
 			int getYEntrance_atPre = getYEntrance();
 			int getXExit_atPre = getXExit();
 			int getYExit_atPre = getYExit();
-			Nature[][] getNature_atPre = null;
+			Nature[][] getNature_atPre = new Nature[getWidth()][getHeight()];
 			for (int y = 0; y < getHeight(); y++) {	
 				for (int x = 0; x < getWidth(); x++) {
 					getNature_atPre[x][y] = getNature(x, y);
