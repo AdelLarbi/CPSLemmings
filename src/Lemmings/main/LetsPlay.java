@@ -1,7 +1,9 @@
 package Lemmings.main;
 
 import Lemmings.implementations.GameEngImpl;
+import Lemmings.implementations.JoueurImpl;
 import Lemmings.implementations.LevelImpl;
+import Lemmings.services.IGameEng;
 import Lemmings.services.ILevel;
 import Lemmings.tools.Nature;
 
@@ -47,36 +49,15 @@ public class LetsPlay {
 		}
 		
 		level.goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT);
-		new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level);
+		 JoueurImpl j  = new JoueurImpl("adel", 8);
+		IGameEng g = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level,j);
 
-//		
-//		JoueurImpl j  = new JoueurImpl("adel", 8);
-//
-//		for(int i = 0; i< 10; i++) {
-//		
-//			
-//			Scannthread t = new Scannthread() ;
-//			t.start();
-//			long start = System.currentTimeMillis();
-//			long end = start + 5*1000; // 3 sec
-//			System.out.println("p pour pause");
-//			
-//			while (t.keyPressed() || System.currentTimeMillis() < end) {
-//				
-//				
-//				if (t.keyPressed() ){
-//					
-//					// TODO
-//				j.affichagePause();
-//					//System.out.println("Resume");
-//					t.keyPressed = false ;
-//				}
-//			}
-//			t.stop();
-//			System.out.println("step suivante");
-//		}	
-//		System.out.println("END!");
-	}
-	
+		
+		   
+           
+			//System.out.println("step suivante");
+		}
 }
+	
+
 

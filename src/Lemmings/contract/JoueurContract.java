@@ -21,11 +21,11 @@ public class JoueurContract extends JoueurDecorator {
 	 * Init --------------------------------------------------------------------
 	 */
 	@Override
-	public void init(String name, int nb,IGameEng g) {
+	public void init(String name, int nb) {
 		try {
 			checkInitPreConditions(name, nb);	
 			checkInvariants();
-			super.init(name, nb,g);	
+			super.init(name, nb);	
 			checkInvariants();
 			checkInitPostConditions(name, nb);
 		} catch (ContractError e) {			
@@ -146,4 +146,6 @@ public class JoueurContract extends JoueurDecorator {
 			throw new PreConditionError("FaireAction_Pre : l.getComportement() != c)");
 		}
 	}
+
+	
 }

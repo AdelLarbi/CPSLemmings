@@ -19,10 +19,7 @@ public abstract class JoueurDecorator implements IJoueur {
 	public HashMap<Comportement, Integer> getJetons() {
 		return delegate.getJetons();
 	}
-	@Override
-	public IGameEng getGameEng() {
-		return delegate.getGameEng();
-	}
+	
 
 	@Override
 	public int getNbJetons() {
@@ -45,8 +42,8 @@ public abstract class JoueurDecorator implements IJoueur {
 	}
 
 	@Override
-	public void init(String name, int nb, IGameEng g) {
-		delegate.init(name, nb,g);		
+	public void init(String name, int nb) {
+		delegate.init(name, nb);		
 	}
 
 	@Override

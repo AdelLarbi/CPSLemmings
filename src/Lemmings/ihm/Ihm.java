@@ -1,6 +1,7 @@
 package Lemmings.ihm;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Lemmings.services.ILemming;
 import Lemmings.services.ILevel;
@@ -59,6 +60,16 @@ public class Ihm {
 					System.out.print(res[i][j]);
 				}
 			}
+			
+//			System.out.println("p pour pause");
+//			System.out.println("n pour continuer");
+//			Scanner keyboard = new Scanner(System.in);
+//			char mykey = '~';
+//			mykey = keyboard.next(".").charAt(0);
+//			if (mykey == 'p')
+				
+			
+			
 			
 			// 4- Wait
 	    	Thread.sleep(1000); // one second.

@@ -1,9 +1,11 @@
 package Lemmings.implementations;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Lemmings.ihm.Ihm;
 import Lemmings.services.IGameEng;
+import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.services.ILevel;
 import Lemmings.tools.Comportement;
@@ -18,8 +20,10 @@ public class GameEngImpl implements IGameEng {
 	private int nbLemmingSaved;
 	private ILevel level;
 	private ArrayList<ILemming> activLemmings;
+	private JoueurImpl j ;
 	
-	public GameEngImpl(int sc, int sp, ILevel level) {
+	public GameEngImpl(int sc, int sp, ILevel level, IJoueur j) {
+		this.j = (JoueurImpl) j ;
 		this.init(sc,sp,level); 
 		this.step();	
 	}
@@ -53,6 +57,13 @@ public class GameEngImpl implements IGameEng {
 			tour++;
 			//test--;
 			ihm.updatedraw(getLevel(), getActivLemmings());
+			System.out.println("p pour pause");
+			System.out.println("n pour continuer");
+			Scanner keyboard = new Scanner(System.in);
+			char mykey = '~';
+			mykey = keyboard.next(".").charAt(0);
+			if (mykey == 'p')
+				j.affichagePause(getActivLemmings());
 		}
 		
 		System.out.println("\n-----------------End of game-----------------");

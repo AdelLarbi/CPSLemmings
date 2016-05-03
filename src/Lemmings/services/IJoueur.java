@@ -12,7 +12,6 @@ public interface IJoueur {
 	int getNbJetonsByComportement(Comportement c);
 	String getName();
 	int maxComportement();
-	IGameEng getGameEng();
 	
 	
 	
@@ -32,7 +31,7 @@ public interface IJoueur {
 	 *  \post : getJetons(init(nom,nb,g)) != null
 	 *  \post : getNbJetons(init(nom,nb,g)) = nb * maxComportement()
 	*/
-	public void init(String name, int nb,IGameEng g);
+	public void init(String name, int nb);
 	
 	
 	

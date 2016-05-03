@@ -18,7 +18,6 @@ public class JoueurImpl implements IJoueur {
 	HashMap<Comportement, Integer> jetons;
 	String name;
 	final int maxComportement = 8;
-	GameEngImpl gameEng ;
 	public static final List<Comportement> liste_a_afficher = Collections.unmodifiableList(
 		    new ArrayList<Comportement>() {/**
 				 * 
@@ -36,8 +35,8 @@ public class JoueurImpl implements IJoueur {
 		        add(Comportement.BASHER);
 		    }});
 
-	public JoueurImpl(String name , int nb , IGameEng g) {
-		this.init(name, nb,g);
+	public JoueurImpl(String name , int nb) {
+		this.init(name, nb);
 	}
 
 	@Override
@@ -72,8 +71,7 @@ public class JoueurImpl implements IJoueur {
 	}
 
 	@Override
-	public void init(String name, int nb,IGameEng g) {
-		this.gameEng = (GameEngImpl) g ;
+	public void init(String name, int nb) {
 		this.name = name;
 		this.jetons = new HashMap<Comportement, Integer>(maxComportement);
 		Comportement[] comp = { Comportement.WALKER , Comportement.DIGGER , Comportement.CLIMBER , Comportement.BUILDER , Comportement.FLOATER , Comportement.BOMBER , Comportement.STOPPER , Comportement.BASHER };
@@ -93,7 +91,7 @@ public class JoueurImpl implements IJoueur {
 	}
 	
 	
-	public void affichagePause() {
+	public void affichagePause(ArrayList<ILemming> lems) {
 		
 		System.out.println("Game Paused.");
 		String chaine = "Inventaire ";
@@ -108,11 +106,6 @@ public class JoueurImpl implements IJoueur {
 
 		}
 
-		// ArrayList<Comportement> cles = (ArrayList<Comportement>)
-		// jetons.keySet();
-
-		// for(int i = 0 ; i< jetons.size();i++)
-
 		System.out.println(chaine);
 		System.out.println("Changement de comportement :  entrer x lemming");
 		Scanner keyboard = new Scanner(System.in);
@@ -123,7 +116,7 @@ public class JoueurImpl implements IJoueur {
 		liste_a_afficher.toString();
 		int c = keyboard.nextInt();
 
-		for (ILemming l : gameEng.getActivLemmings()) {
+		for (ILemming l : lems) {
 			if (l.getX() == x && l.getY() == y) {
 
 				faireAction(l, liste_a_afficher.get(c));
@@ -133,10 +126,8 @@ public class JoueurImpl implements IJoueur {
 
 	}
 
-	@Override
-	public IGameEng getGameEng() {
 
-		return this.gameEng;
-	}
+
+
 
 }

@@ -11,7 +11,7 @@ import Lemmings.tools.Comportement;
 
 public interface IFacory {
 	public ILevel makeLevel(int x, int y);
-	public IGameEng makeGameEng(int sc, int sp, ILevel level);
+	public IGameEng makeGameEng(int sc, int sp, ILevel level,IJoueur j);
 	public ILemming makeLemming(ArrayList<Comportement> c, IGameEng core);
-	public IJoueur makeJoueur(String name, int nb,IGameEng g);
+	public IJoueur makeJoueur(String name, int nb);
 }

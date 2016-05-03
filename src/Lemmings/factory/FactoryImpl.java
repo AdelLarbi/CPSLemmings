@@ -20,8 +20,8 @@ public class FactoryImpl implements IFacory {
 	}
 
 	@Override
-	public IGameEng makeGameEng(int sc, int sp, ILevel level) {
-		return  new GameEngImpl(sc, sp, level);
+	public IGameEng makeGameEng(int sc, int sp, ILevel level, IJoueur j) {
+		return  new GameEngImpl(sc, sp, level,j);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class FactoryImpl implements IFacory {
 	}
 
 	@Override
-	public IJoueur makeJoueur(String name, int nb , IGameEng g) {
-		return new JoueurImpl(name, nb,g);
+	public IJoueur makeJoueur(String name, int nb) {
+		return new JoueurImpl(name, nb);
 	}
 }
