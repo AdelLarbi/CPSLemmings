@@ -6,6 +6,7 @@ import Lemmings.error.ErrorHandler;
 import Lemmings.error.InvariantError;
 import Lemmings.error.PostConditionError;
 import Lemmings.error.PreConditionError;
+import Lemmings.services.IGameEng;
 import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.tools.Comportement;
@@ -20,11 +21,11 @@ public class JoueurContract extends JoueurDecorator {
 	 * Init --------------------------------------------------------------------
 	 */
 	@Override
-	public void init(String name, int nb) {
+	public void init(String name, int nb,IGameEng g) {
 		try {
 			checkInitPreConditions(name, nb);	
 			checkInvariants();
-			super.init(name, nb);	
+			super.init(name, nb,g);	
 			checkInvariants();
 			checkInitPostConditions(name, nb);
 		} catch (ContractError e) {			

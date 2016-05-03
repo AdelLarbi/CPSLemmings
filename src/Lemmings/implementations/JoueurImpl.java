@@ -1,10 +1,14 @@
 package Lemmings.implementations;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import Lemmings.services.IGameEng;
 import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.tools.Comportement;
@@ -13,10 +17,27 @@ public class JoueurImpl implements IJoueur {
 	
 	HashMap<Comportement, Integer> jetons;
 	String name;
-	final int maxComportement = 4;
+	final int maxComportement = 8;
+	GameEngImpl gameEng ;
+	public static final List<Comportement> liste_a_afficher = Collections.unmodifiableList(
+		    new ArrayList<Comportement>() {/**
+				 * 
+				 */
+				private static final long serialVersionUID = 1L;
 
-	public JoueurImpl(String name , int nb) {
-		this.init(name, nb);
+			{
+		        add(Comportement.WALKER);
+		        add(Comportement.DIGGER);
+		        add(Comportement.CLIMBER);
+		        add(Comportement.BUILDER);
+		        add(Comportement.FLOATER);
+		        add(Comportement.BOMBER);
+		        add(Comportement.STOPPER);
+		        add(Comportement.BASHER);
+		    }});
+
+	public JoueurImpl(String name , int nb , IGameEng g) {
+		this.init(name, nb,g);
 	}
 
 	@Override
@@ -27,7 +48,7 @@ public class JoueurImpl implements IJoueur {
 	@Override
 	public int getNbJetons() {
 		int res = 0;
-		Comportement[] comp = { Comportement.WALKER };
+		Comportement[] comp = { Comportement.WALKER , Comportement.DIGGER , Comportement.CLIMBER , Comportement.BUILDER , Comportement.FLOATER , Comportement.BOMBER , Comportement.STOPPER , Comportement.BASHER };
 		
 		for (int i = 0; i < jetons.size(); i++)
 			res = res + jetons.get(comp[i]);
@@ -51,10 +72,11 @@ public class JoueurImpl implements IJoueur {
 	}
 
 	@Override
-	public void init(String name, int nb) {
+	public void init(String name, int nb,IGameEng g) {
+		this.gameEng = (GameEngImpl) g ;
 		this.name = name;
 		this.jetons = new HashMap<Comportement, Integer>(maxComportement);
-		Comportement[] comp= { Comportement.WALKER,Comportement.FALLER} ;
+		Comportement[] comp = { Comportement.WALKER , Comportement.DIGGER , Comportement.CLIMBER , Comportement.BUILDER , Comportement.FLOATER , Comportement.BOMBER , Comportement.STOPPER , Comportement.BASHER };
 		
 		for (int i = 0; i < comp.length; i++)
 			jetons.put(comp[i], nb);
@@ -83,25 +105,38 @@ public class JoueurImpl implements IJoueur {
 		   Integer valeur = jetons.get(cle); 
 		   
 		   chaine = chaine + " Comportement : "+cle+" jetons : "+ valeur ;
-		   
+
 		}
-		
-		
-		//ArrayList<Comportement> cles = (ArrayList<Comportement>) jetons.keySet();
-		
-		//for(int i = 0 ; i< jetons.size();i++)
-			
-		
+
+		// ArrayList<Comportement> cles = (ArrayList<Comportement>)
+		// jetons.keySet();
+
+		// for(int i = 0 ; i< jetons.size();i++)
+
 		System.out.println(chaine);
 		System.out.println("Changement de comportement :  entrer x lemming");
 		Scanner keyboard = new Scanner(System.in);
 		int x = keyboard.nextInt();
 		System.out.println("Changement de comportement :  entrer y lemming");
 		int y = keyboard.nextInt();
-		System.out.println("Changement de comportement :  entrer Comportement");
+		System.out.println("Changement de comportement :  entrer le numero du Comportement parmis ceux la");
+		liste_a_afficher.toString();
 		int c = keyboard.nextInt();
-		
-		
+
+		for (ILemming l : gameEng.getActivLemmings()) {
+			if (l.getX() == x && l.getY() == y) {
+
+				faireAction(l, liste_a_afficher.get(c));
+
+			}
+		}
+
+	}
+
+	@Override
+	public IGameEng getGameEng() {
+
+		return this.gameEng;
 	}
 
 }

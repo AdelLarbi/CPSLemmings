@@ -30,7 +30,7 @@ public class FactoryImpl implements IFacory {
 	}
 
 	@Override
-	public IJoueur makeJoueur(String name, int nb) {
-		return new JoueurImpl(name, nb);
+	public IJoueur makeJoueur(String name, int nb , IGameEng g) {
+		return new JoueurImpl(name, nb,g);
 	}
 }

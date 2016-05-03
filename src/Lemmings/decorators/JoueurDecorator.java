@@ -2,6 +2,7 @@ package Lemmings.decorators;
 
 import java.util.HashMap;
 
+import Lemmings.services.IGameEng;
 import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.tools.Comportement;
@@ -17,6 +18,10 @@ public abstract class JoueurDecorator implements IJoueur {
 	@Override
 	public HashMap<Comportement, Integer> getJetons() {
 		return delegate.getJetons();
+	}
+	@Override
+	public IGameEng getGameEng() {
+		return delegate.getGameEng();
 	}
 
 	@Override
@@ -40,8 +45,8 @@ public abstract class JoueurDecorator implements IJoueur {
 	}
 
 	@Override
-	public void init(String name, int nb) {
-		delegate.init(name, nb);		
+	public void init(String name, int nb, IGameEng g) {
+		delegate.init(name, nb,g);		
 	}
 
 	@Override
