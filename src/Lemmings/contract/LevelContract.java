@@ -332,17 +332,17 @@ public class LevelContract extends LevelDecorator {
 		if (!(isEditing() == false)) {
 			throw new PostConditionError("remove : isEditing() != false");
 		}
-		if (!(x >= 0)) {
-			throw new PreConditionError("remove : x < 0");
+		if (!(x > 0)) {
+			throw new PreConditionError("remove : x <= 0");
 		}
-		if (!(x < getWidth())) {
-			throw new PreConditionError("remove : x >= getWidth()");
+		if (!(x < getWidth()-1)) {
+			throw new PreConditionError("remove : x >= getWidth()-1");
 		}
-		if (!(y >= 0)) {
-			throw new PreConditionError("remove : y < 0");
+		if (!(y > 0)) {
+			throw new PreConditionError("remove : y <= 0");
 		}
-		if (!(y < getHeight())) {
-			throw new PreConditionError("remove : y >= getHeight()");
+		if (!(y < getHeight()-1)) {
+			throw new PreConditionError("remove : y >= getHeight()-1");
 		}
 		if (!(x != getXEntrance() && y != getYEntrance())) {
 			throw new PostConditionError("remove : x == getXEntrance() && y == getYEntrance()");
@@ -405,17 +405,17 @@ public class LevelContract extends LevelDecorator {
 		if (!(isEditing() == false)) {
 			throw new PostConditionError("build : isEditing() != false");
 		}
-		if (!(x >= 0)) {
-			throw new PreConditionError("build : x < 0");
+		if (!(x > 0)) {
+			throw new PreConditionError("build : x <= 0");
 		}
-		if (!(x < getWidth())) {
-			throw new PreConditionError("build : x >= getWidth()");
+		if (!(x < getWidth()-1)) {
+			throw new PreConditionError("build : x >= getWidth()-1");
 		}
-		if (!(y >= 0)) {
-			throw new PreConditionError("build : y < 0");
+		if (!(y > 0)) {
+			throw new PreConditionError("build : y <= 0");
 		}
-		if (!(y < getHeight())) {
-			throw new PreConditionError("build : y >= getHeight()");
+		if (!(y < getHeight()-1)) {
+			throw new PreConditionError("build : y >= getHeight()-1");
 		}
 		if (!(x != getXEntrance() && y != getYEntrance())) {
 			throw new PostConditionError("build : x == getXEntrance() && y == getYEntrance()");
