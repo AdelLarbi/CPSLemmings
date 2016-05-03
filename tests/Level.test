@@ -1596,11 +1596,41 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	isEditing() == false OR true ???
+	goEditing()
 	
 	remove(L,46,55)
 Oracle : 	
 	Exception {
-		remove : getNature(x,y) != Nature.DIRT 
+		remove : isEditing() == false 
+	}
+--------------------------------------------------------------------------------
+[Test 5.15]: testRemove15 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,0,55)
+Oracle : 	
+	Exception {
+		remove : x >= 0
+	}
+--------------------------------------------------------------------------------
+[Test 5.16]: testRemove16 | Negatif
+
+Conditions initiales :
+	L = init(100,80)
+Opérations : 
+	setNature(L,46,55,Nature.DIRT)
+	
+	goPlay(L, 8, 11, 91, 77)
+	
+	remove(L,0,55)
+Oracle : 	
+	Exception {
+		remove : x >= 0
 	}
 	
