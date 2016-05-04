@@ -36,7 +36,7 @@ public class LetsPlay {
 			level.setNature(8, 4, Nature.METAL);
 			level.setNature(9, 4, Nature.METAL);
 			level.setNature(10, 4, Nature.METAL);
-			
+			level.setNature(11, 4, Nature.DIRT);
 			level.setNature(2, 7, Nature.METAL);
 			level.setNature(3, 7, Nature.METAL);
 			level.setNature(4, 7, Nature.METAL);

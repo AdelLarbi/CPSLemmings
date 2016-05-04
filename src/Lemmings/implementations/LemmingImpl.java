@@ -111,8 +111,39 @@ public class LemmingImpl implements ILemming {
 		int xExit = getGameEng().getLevel().getXExit();
 		int yExit = getGameEng().getLevel().getYExit();
  
-		// Case 8.a:
-		if (getComportement().contains(Comportement.FALLER) && !getComportement().contains(Comportement.CLIMBER)
+		 if (getComportement().contains(Comportement.DIGGER) 
+					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.EMPTY) {
+				System.out.println("cas 9");
+				comportement.remove(Comportement.DIGGER);
+				comportement.add(Comportement.FALLER);
+				xLemming = getX_atPre;
+				yLemming = getY_atPre;
+				falling = 0;
+				// Case 10:
+			} else if (getComportement().contains(Comportement.DIGGER)
+					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.METAL) {
+				System.out.println("cas 10");
+				comportement.remove(Comportement.DIGGER);
+				comportement .add(Comportement.WALKER);
+				xLemming = getX_atPre;
+				yLemming = getY_atPre;
+				falling = 0;
+				// Case 11:
+			} else if (getComportement().contains(Comportement.DIGGER)
+					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.DIRT) {
+				System.out.println("cas 11");
+				comportement.remove(Comportement.DIGGER);
+				comportement.add(Comportement.WALKER);
+				xLemming = getX_atPre;
+				yLemming = getY_atPre + 1;
+				falling = 0;
+				getGameEng().getLevel().setNature(getX(), getY() + 1, Nature.EMPTY);
+				if (getGameEng().getLevel().getNature(getX() - 1, getY() + 1) == Nature.DIRT
+				 || getGameEng().getLevel().getNature(getX() + 1, getY() + 1) == Nature.DIRT) {
+					getGameEng().getLevel().setNature(getX(), getY() + 1, Nature.EMPTY);
+				}
+				
+			}else if (getComportement().contains(Comportement.FALLER) && !getComportement().contains(Comportement.CLIMBER)
 				&& (core.isObstacle(getX(), getY() + 1) && falling_atPre >= 8)) {
 			System.out.println("cas 8.a");
 			isDead = true;
@@ -273,43 +304,12 @@ public class LemmingImpl implements ILemming {
 			isDroitier = false;
 			falling = 0;
 			// Case 9:
-		} else if (getComportement().contains(Comportement.DIGGER) 
-				&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.EMPTY) {
-			System.out.println("cas 9");
-			comportement.remove(Comportement.DIGGER);
-			comportement.add(Comportement.FALLER);
-			xLemming = getX_atPre;
-			yLemming = getY_atPre;
-			falling = 0;
-			// Case 10:
-		} else if (getComportement().contains(Comportement.DIGGER)
-				&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.METAL) {
-			System.out.println("cas 10");
-			comportement.remove(Comportement.DIGGER);
-			comportement .add(Comportement.WALKER);
-			xLemming = getX_atPre;
-			yLemming = getY_atPre;
-			falling = 0;
-			// Case 11:
-		} else if (getComportement().contains(Comportement.DIGGER)
-				&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.DIRT) {
-			System.out.println("cas 11");
-			comportement.remove(Comportement.DIGGER);
-			comportement.add(Comportement.WALKER);
-			xLemming = getX_atPre;
-			yLemming = getY_atPre + 1;
-			falling = 0;
-			getGameEng().getLevel().setNature(getX(), getY() + 1, Nature.EMPTY);
-			if (getGameEng().getLevel().getNature(getX() - 1, getY() + 1) == Nature.DIRT
-			 || getGameEng().getLevel().getNature(getX() + 1, getY() + 1) == Nature.DIRT) {
-				getGameEng().getLevel().setNature(getX(), getY() + 1, Nature.EMPTY);
-			}
-			// Case 12.a:
 		} else if (isDroitier_atPre && getComportement().contains(Comportement.CLIMBER) 
 			    && core.isObstacle(getX()+1, getY()) && core.isObstacle(getX() + 1, getY() + 1)  
 			    && getGameEng().getLevel().getNature(getX(), getY()+1) == Nature.EMPTY
 			    && getGameEng().getLevel().getNature(getX(), getY()+2) == Nature.EMPTY) {
 			System.out.println("cas 12.a");
+			// Case 12.a:
 			isDroitier = true;
 			xLemming = getX_atPre;
 			yLemming = getY_atPre + 1;
