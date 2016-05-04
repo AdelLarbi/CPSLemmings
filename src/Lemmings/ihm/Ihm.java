@@ -48,35 +48,17 @@ public class Ihm {
 			}
 		}
 		
-	    try {
-	    	// 2- Clear
-	    	for(int i = 0; i < 25; i++) {
-	    	    System.out.println("");
-	    	}
-	    	
-	    	// 3- Draw
-			for (int j = 0; j < l.getHeight(); j++) { 
-				for (int i = 0; i < l.getWidth(); i++) {		
-					System.out.print(res[i][j]);
-				}
+	    // 2- Clear
+		for(int i = 0; i < 25; i++) {
+		    System.out.println("");
+		}
+		
+		// 3- Draw
+		for (int j = 0; j < l.getHeight(); j++) { 
+			for (int i = 0; i < l.getWidth(); i++) {		
+				System.out.print(res[i][j]);
 			}
-			
-//			System.out.println("p pour pause");
-//			System.out.println("n pour continuer");
-//			Scanner keyboard = new Scanner(System.in);
-//			char mykey = '~';
-//			mykey = keyboard.next(".").charAt(0);
-//			if (mykey == 'p')
-				
-			
-			
-			
-			// 4- Wait
-	    	Thread.sleep(1000); // one second.
-	        
-	    } catch(InterruptedException ex) {
-	        Thread.currentThread().interrupt();
-	    }
+		}
 	}
 }
 

@@ -7,7 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	TestContractLevel.class
+	TestContractLevel.class,
+	TestContractGameEng.class
 })
 
 public class TestsWithContract {

@@ -72,7 +72,7 @@ public interface ILevel {
 	 *  \Pre : xExit > 0 && xExit < getWidth()-1 && yExit > 0 && yExit < getHeight()-1
 	 *  \Pre : (xEntrance != xExit && yEntrance != yExit)
 	 *  \Pre : getNature(xEntrance,yEntrance) == Nature.EMPTY && getNature(xEntrance,yEntrance-1) == Nature.EMPTY && getNature(xEntrance,yEntrance+1) == Nature.EMPTY
-	 *  \Pre : getNature(xExit,yExit) == Nature.EMPTY && getNature(xExit,yExit-1) == Nature.METAL && getNature(xExit,yExit+1) == Nature.EMPTY
+	 *  \Pre : getNature(xExit,yExit) == Nature.EMPTY && getNature(xExit,yExit-1) == Nature.EMPTY && getNature(xExit,yExit+1) == Nature.METAL
 	 *  \post : isEditing(goPlay()) == false
 	 *  \post : FORALL (x,y) / getNature(goPlay(),x,y) == getNature(x,y)@Pre
 	 *  \post : getXEntrance(goPlay()) == xEntrance

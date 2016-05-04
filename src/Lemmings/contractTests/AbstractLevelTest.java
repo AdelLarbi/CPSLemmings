@@ -243,9 +243,9 @@ public abstract class AbstractLevelTest {
 		level.setNature(xEntrance, yEntrance, Nature.EMPTY);
 		level.setNature(xEntrance, yEntrance+1, Nature.EMPTY);
 		
-		level.setNature(xExit, yExit-1, Nature.METAL);
+		level.setNature(xExit, yExit-1, Nature.EMPTY);
 		level.setNature(xExit, yExit, Nature.EMPTY);
-		level.setNature(xExit, yExit+1, Nature.EMPTY);
+		level.setNature(xExit, yExit+1, Nature.METAL);
 		
 		Nature[][] getNature_atPre = new Nature[level.getWidth()][level.getHeight()];
 		for (int j = 0; j < level.getHeight(); j++) {	
@@ -403,9 +403,9 @@ public abstract class AbstractLevelTest {
 		level.setNature(8, 11, Nature.EMPTY);
 		level.setNature(8, 12, Nature.EMPTY);
 		
-		level.setNature(91, 75, Nature.METAL);
+		level.setNature(91, 75, Nature.EMPTY);
 		level.setNature(91, 76, Nature.EMPTY);
-		level.setNature(91, 77, Nature.EMPTY);
+		level.setNature(91, 77, Nature.METAL);
 		
 		level.setNature(x, y, Nature.DIRT);
 		
@@ -510,9 +510,9 @@ public abstract class AbstractLevelTest {
 		level.setNature(8, 11, Nature.EMPTY);
 		level.setNature(8, 12, Nature.EMPTY);
 		
-		level.setNature(91, 75, Nature.METAL);
+		level.setNature(91, 75, Nature.EMPTY);
 		level.setNature(91, 76, Nature.EMPTY);
-		level.setNature(91, 77, Nature.EMPTY);
+		level.setNature(91, 77, Nature.METAL);
 		
 		level.setNature(x, y, Nature.EMPTY);
 		

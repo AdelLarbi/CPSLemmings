@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import Lemmings.factory.FactoryImpl;
 import Lemmings.services.IGameEng;
+import Lemmings.services.IJoueur;
 import Lemmings.services.ILevel;
 
 public abstract class AbstractGameEngTest {
@@ -49,11 +50,17 @@ public abstract class AbstractGameEngTest {
 		testGameEngInitWith(6, 6);						 					
 	}
 	
+	@Test
+	public void gameEng_Init_6() {
+		testGameEngInitWith(25, 4);						 					
+	}
+	
 	private void testGameEngInitWith(int sizeColony, int spawnSpeed) {			
 		
 		ILevel level = new FactoryImpl().makeLevel(100, 80);
+		IJoueur joueur = new FactoryImpl().makeJoueur("Player1", 5);
 		
-		//gameEng.init(sizeColony, spawnSpeed, level, );
+		gameEng.init(sizeColony, spawnSpeed, level, joueur);
 		
 		Assert.assertTrue("Test GameEng Init : ",
 				gameEng.getTour() == 0
@@ -64,7 +71,8 @@ public abstract class AbstractGameEngTest {
 			 && gameEng.getNbLemmingCreated() == 0
 			 && gameEng.getNbLemmingSaved() == 0
 			 && gameEng.getLevel() == level
-			 && gameEng.getActivLemmings() == null
+			 && gameEng.getJoueur() == joueur
+			 && gameEng.getActivLemmings().isEmpty()
 		);
 	}
 }

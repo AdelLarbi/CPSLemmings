@@ -99,7 +99,10 @@ public class GameEngImpl implements IGameEng {
 	
 	@Override
 	public int getScore() {
-		return (getNbLemmingSaved() / getNbLemmingCreated()) * 100 + getTour();
+		if (getNbLemmingCreated() != 0) {
+			return (getNbLemmingSaved() / getNbLemmingCreated()) * 100 + getTour();
+		}
+		return 0;
 	}
 
 	@Override

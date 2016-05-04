@@ -458,9 +458,9 @@ Opérations :
 	setNature(L,1,42,Nature.EMPTY)
 	setNature(L,1,43,Nature.EMPTY)
 	
-	setNature(L,78,54,Nature.METAL)
+	setNature(L,78,54,Nature.EMPTY)
 	setNature(L,78,55,Nature.EMPTY)
-	setNature(L,78,56,Nature.EMPTY)
+	setNature(L,78,56,Nature.METAL)
 	
 	goPlay(L, 1, 42, 78, 55)
 Oracle : 
@@ -487,9 +487,9 @@ Opérations :
 	setNature(L,30,2,Nature.EMPTY)
 	setNature(L,30,3,Nature.EMPTY)
 	
-	setNature(L,78,54,Nature.METAL)
+	setNature(L,78,54,Nature.EMPTY)
 	setNature(L,78,55,Nature.EMPTY)
-	setNature(L,78,56,Nature.EMPTY)
+	setNature(L,78,56,Nature.METAL)
 
 	goPlay(L, 30, 2, 78, 55)
 Oracle : 
@@ -516,9 +516,9 @@ Opérations :
 	setNature(L,30,41,Nature.EMPTY)
 	setNature(L,30,42,Nature.EMPTY)
 	
-	setNature(L,2,54,Nature.METAL)
+	setNature(L,2,54,Nature.EMPTY)
 	setNature(L,2,55,Nature.EMPTY)
-	setNature(L,2,56,Nature.EMPTY)
+	setNature(L,2,56,Nature.METAL)
 
 	goPlay(L, 30, 41, 2, 55)
 Oracle : 
@@ -545,9 +545,9 @@ Opérations :
 	setNature(L,30,41,Nature.EMPTY)
 	setNature(L,30,42,Nature.EMPTY)
 
-	setNature(L,70,1,Nature.METAL)
+	setNature(L,70,1,Nature.EMPTY)
 	setNature(L,70,2,Nature.EMPTY)
-	setNature(L,70,3,Nature.EMPTY)
+	setNature(L,70,3,Nature.METAL)
 	
 	goPlay(L, 30, 41, 70, 2)
 Oracle : 
@@ -574,9 +574,9 @@ Opérations :
 	setNature(L,98,42,Nature.EMPTY)
 	setNature(L,98,43,Nature.EMPTY)
 	
-	setNature(L,78,54,Nature.METAL)
+	setNature(L,78,54,Nature.EMPTY)
 	setNature(L,78,55,Nature.EMPTY)
-	setNature(L,78,56,Nature.EMPTY)
+	setNature(L,78,56,Nature.METAL)
 	
 	goPlay(L, 98, 42, 78, 55)
 Oracle : 
@@ -603,9 +603,9 @@ Opérations :
 	setNature(L,30,77,Nature.EMPTY)
 	setNature(L,30,78,Nature.EMPTY)
 	
-	setNature(L,79,54,Nature.METAL)
+	setNature(L,79,54,Nature.EMPTY)
 	setNature(L,79,55,Nature.EMPTY)
-	setNature(L,79,56,Nature.EMPTY)
+	setNature(L,79,56,Nature.METAL)
 	
 	goPlay(L, 30, 77, 79, 55)
 Oracle : 
@@ -632,9 +632,9 @@ Opérations :
 	setNature(L,30,41,Nature.EMPTY)
 	setNature(L,30,42,Nature.EMPTY)
 	
-	setNature(L,98,54,Nature.METAL)
+	setNature(L,98,54,Nature.EMPTY)
 	setNature(L,98,55,Nature.EMPTY)
-	setNature(L,98,56,Nature.EMPTY)
+	setNature(L,98,56,Nature.METAL)
 	
 	goPlay(L, 30, 41, 98, 55)
 Oracle : 
@@ -661,9 +661,9 @@ Opérations :
 	setNature(L,30,41,Nature.EMPTY)
 	setNature(L,30,42,Nature.EMPTY)
 	
-	setNature(L,70,76,Nature.METAL)
+	setNature(L,70,76,Nature.EMPTY)
 	setNature(L,70,77,Nature.EMPTY)
-	setNature(L,70,78,Nature.EMPTY)
+	setNature(L,70,78,Nature.METAL)
 	
 	goPlay(L, 30, 41, 70, 77)
 Oracle : 
@@ -690,9 +690,9 @@ Opérations :
 	setNature(L,90,55,Nature.EMPTY)
 	setNature(L,90,56,Nature.EMPTY)
 	
-	setNature(L,20,25,Nature.METAL)
+	setNature(L,20,25,Nature.EMPTY)
 	setNature(L,20,26,Nature.EMPTY)
-	setNature(L,20,27,Nature.EMPTY)
+	setNature(L,20,27,Nature.METAL)
 	
 	goPlay(L, 90, 55, 20, 26)
 Oracle : 
@@ -719,9 +719,9 @@ Opérations :
 	setNature(L,90,55,Nature.EMPTY)
 	setNature(L,90,56,Nature.EMPTY)
 	
-	setNature(L,90,25,Nature.METAL)
+	setNature(L,90,25,Nature.EMPTY)
 	setNature(L,90,26,Nature.EMPTY)
-	setNature(L,90,27,Nature.EMPTY)
+	setNature(L,90,27,Nature.METAL)
 	
 	goPlay(L, 90, 55, 90, 26)
 Oracle : 
@@ -748,9 +748,9 @@ Opérations :
 	setNature(L,90,55,Nature.EMPTY)
 	setNature(L,90,56,Nature.EMPTY)
 	
-	setNature(L,20,54,Nature.METAL)
+	setNature(L,20,54,Nature.EMPTY)
 	setNature(L,20,55,Nature.EMPTY)
-	setNature(L,20,56,Nature.EMPTY)
+	setNature(L,20,56,Nature.METAL)
 	
 	goPlay(L, 90, 55, 20, 55)
 Oracle : 
@@ -777,9 +777,9 @@ Opérations :
 	setNature(L,55,64,Nature.EMPTY)
 	setNature(L,55,65,Nature.EMPTY)
 	
-	setNature(L,64,63,Nature.METAL)
+	setNature(L,64,63,Nature.EMPTY)
 	setNature(L,64,64,Nature.EMPTY)
-	setNature(L,64,65,Nature.EMPTY)
+	setNature(L,64,65,Nature.METAL)
 	
 	goPlay(L, 55, 64, 64, 64)
 Oracle : 
@@ -805,9 +805,9 @@ Opérations :
 	setNature(L,64,55,Nature.EMPTY)
 	setNature(L,64,56,Nature.EMPTY)
 	
-	setNature(L,64,63,Nature.METAL)
+	setNature(L,64,63,Nature.EMPTY)
 	setNature(L,64,64,Nature.EMPTY)
-	setNature(L,64,65,Nature.EMPTY)
+	setNature(L,64,65,Nature.METAL)
 	
 	goPlay(L, 64, 55, 64, 64)
 Oracle : 
@@ -834,9 +834,9 @@ Opérations :
 	setNature(L,64,64,Nature.EMPTY)
 	setNature(L,64,65,Nature.EMPTY)
 	
-	setNature(L,55,63,Nature.METAL)
+	setNature(L,55,63,Nature.EMPTY)
 	setNature(L,55,64,Nature.EMPTY)
-	setNature(L,55,65,Nature.EMPTY)
+	setNature(L,55,65,Nature.METAL)
 	
 	goPlay(L, 64, 64, 55, 64)
 Oracle : 
@@ -863,9 +863,9 @@ Opérations :
 	setNature(L,64,64,Nature.EMPTY)
 	setNature(L,64,65,Nature.EMPTY)
 	
-	setNature(L,64,54,Nature.METAL)
+	setNature(L,64,54,Nature.EMPTY)
 	setNature(L,64,55,Nature.EMPTY)
-	setNature(L,64,56,Nature.EMPTY)
+	setNature(L,64,56,Nature.METAL)
 	 
 	goPlay(L, 64, 64, 64, 55)
 Oracle : 
@@ -892,9 +892,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -915,9 +915,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 	goPlay(L, 8, 11, 91, 77)
@@ -942,9 +942,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 0, 11, 91, 77)
 Oracle : 	
@@ -968,9 +968,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 99, 11, 91, 77)
 Oracle : 	
@@ -994,9 +994,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 0, 91, 77)
 Oracle : 	
@@ -1020,9 +1020,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 79, 91, 77)
 Oracle : 	
@@ -1046,9 +1046,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 0, 77)
 Oracle : 	
@@ -1072,9 +1072,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 79, 91, 77)
 Oracle : 	
@@ -1098,9 +1098,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 0)
 Oracle : 	
@@ -1124,9 +1124,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 79)
 Oracle : 	
@@ -1150,9 +1150,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 8, 11)
 Oracle : 	
@@ -1176,9 +1176,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -1202,9 +1202,9 @@ Opérations :
 	setNature(L,8,11,Nature.DIRT)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -1228,9 +1228,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.DIRT)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -1256,7 +1256,7 @@ Opérations :
 	
 	setNature(L,91,76,Nature.DIRT)
 	setNature(L,91,77,Nature.EMPTY)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -1280,9 +1280,9 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.DIRT)
-	setNature(L,91,78,Nature.EMPTY)
+	setNature(L,91,78,Nature.METAL)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
@@ -1306,14 +1306,14 @@ Opérations :
 	setNature(L,8,11,Nature.EMPTY)
 	setNature(L,8,12,Nature.EMPTY)
 	
-	setNature(L,91,76,Nature.METAL)
+	setNature(L,91,76,Nature.EMPTY)
 	setNature(L,91,77,Nature.EMPTY)
 	setNature(L,91,78,Nature.DIRT)
 	
 	goPlay(L, 8, 11, 91, 77)
 Oracle : 	
 	Exception {
-		goPlay : getNature(xExit,yExit+1) != Nature.EMPTY
+		goPlay : getNature(xExit,yExit+1) != Nature.METAL
 	}
 --------------------------------------------------------------------------------
 [Test 4]: goEditing

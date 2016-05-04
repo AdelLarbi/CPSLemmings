@@ -262,9 +262,9 @@ public class TestContractLevel extends AbstractLevelTest {
 		level.setNature(8, 11, Nature.EMPTY);
 		level.setNature(8, 12, Nature.EMPTY);
 		
-		level.setNature(91, 76, Nature.METAL);
+		level.setNature(91, 76, Nature.EMPTY);
 		level.setNature(91, 77, Nature.EMPTY);
-		level.setNature(91, 78, Nature.EMPTY);
+		level.setNature(91, 78, Nature.METAL);
 	}
 	
 	/**
@@ -349,9 +349,9 @@ public class TestContractLevel extends AbstractLevelTest {
 		level.setNature(8, 11, Nature.EMPTY);
 		level.setNature(8, 12, Nature.EMPTY);
 		
-		level.setNature(91, 75, Nature.METAL);
+		level.setNature(91, 75, Nature.EMPTY);
 		level.setNature(91, 76, Nature.EMPTY);
-		level.setNature(91, 77, Nature.EMPTY);
+		level.setNature(91, 77, Nature.METAL);
 		
 		level.setNature(x, y, nature);
 		

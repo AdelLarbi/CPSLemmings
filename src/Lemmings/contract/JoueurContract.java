@@ -147,5 +147,8 @@ public class JoueurContract extends JoueurDecorator {
 		}
 	}
 
-	
+	/**
+	 * doPause -----------------------------------------------------------------
+	 * TODO
+	 */
 }

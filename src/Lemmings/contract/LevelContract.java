@@ -211,11 +211,11 @@ public class LevelContract extends LevelDecorator {
 		if (!(getNature(xExit,yExit) == Nature.EMPTY)) {
 			throw new PreConditionError("goPlay : getNature(xExit,yExit) != Nature.EMPTY");
 		}
-		if (!(getNature(xExit,yExit-1) == Nature.METAL)) {
-			throw new PreConditionError("goPlay : getNature(xExit,yExit-1) != Nature.METAL");
+		if (!(getNature(xExit,yExit-1) == Nature.EMPTY)) {
+			throw new PreConditionError("goPlay : getNature(xExit,yExit-1) != Nature.EMPTY");
 		}		
-		if (!(getNature(xExit,yExit+1) == Nature.EMPTY)) {
-			throw new PreConditionError("goPlay : getNature(xExit,yExit+1) != Nature.EMPTY");
+		if (!(getNature(xExit,yExit+1) == Nature.METAL)) {
+			throw new PreConditionError("goPlay : getNature(xExit,yExit+1) != Nature.METAL");
 		}
 	}
 
