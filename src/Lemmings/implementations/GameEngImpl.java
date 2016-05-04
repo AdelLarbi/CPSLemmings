@@ -20,22 +20,22 @@ public class GameEngImpl implements IGameEng {
 	private int nbLemmingSaved;
 	private ILevel level;
 	private ArrayList<ILemming> activLemmings;
-	private JoueurImpl j ;
+	private IJoueur joueur;
 	
-	public GameEngImpl(int sc, int sp, ILevel level, IJoueur j) {
-		this.j = (JoueurImpl) j ;
-		this.init(sc,sp,level); 
+	public GameEngImpl(int sc, int sp, ILevel level, IJoueur joueur) {
+		this.init(sc, sp, level, joueur); 
 		this.step();	
 	}
 	
 	@Override
-	public void init(int sc, int sp, ILevel level) {
+	public void init(int sc, int sp, ILevel level, IJoueur joueur) {
 		this.tour = 0;
 		this.sizeColony = sc;
 		this.spawnSpeed = sp;
 		this.nbLemmingCreated = 0;
 		this.nbLemmingSaved = 0;
 		this.level = level;
+		this.joueur = joueur;
 		this.activLemmings = new ArrayList<ILemming>();
 	}
 	
@@ -43,8 +43,6 @@ public class GameEngImpl implements IGameEng {
 	public void step() {
 		Ihm ihm = new Ihm();
 		
-		//int test = 20;
-		//while (test > 0) {
 		while (!isGameOver()) {
 		
 			if (tour % spawnSpeed == 0 && nbLemmingCreated < getSizeColony()) {
@@ -55,15 +53,16 @@ public class GameEngImpl implements IGameEng {
 			}
 			applyLemmingStep();
 			tour++;
-			//test--;
 			ihm.updatedraw(getLevel(), getActivLemmings());
+			
 			System.out.println("p pour pause");
 			System.out.println("n pour continuer");
 			Scanner keyboard = new Scanner(System.in);
 			char mykey = '~';
 			mykey = keyboard.next(".").charAt(0);
-			if (mykey == 'p')
-				j.affichagePause(getActivLemmings());
+			if (mykey == 'p') {
+				joueur.doPause(getActivLemmings());
+			}
 		}
 		
 		System.out.println("\n-----------------End of game-----------------");
@@ -131,6 +130,11 @@ public class GameEngImpl implements IGameEng {
 	@Override
 	public ILevel getLevel() {
 		return this.level;
+	}
+	
+	@Override
+	public IJoueur getJoueur() {
+		return this.joueur;
 	}
 
 	@Override

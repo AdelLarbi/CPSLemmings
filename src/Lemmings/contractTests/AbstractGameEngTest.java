@@ -53,7 +53,7 @@ public abstract class AbstractGameEngTest {
 		
 		ILevel level = new FactoryImpl().makeLevel(100, 80);
 		
-		gameEng.init(sizeColony, spawnSpeed, level);
+		//gameEng.init(sizeColony, spawnSpeed, level, );
 		
 		Assert.assertTrue("Test GameEng Init : ",
 				gameEng.getTour() == 0

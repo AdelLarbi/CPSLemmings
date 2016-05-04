@@ -8,6 +8,7 @@ import Lemmings.error.InvariantError;
 import Lemmings.error.PostConditionError;
 import Lemmings.error.PreConditionError;
 import Lemmings.services.IGameEng;
+import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.services.ILevel;
 import Lemmings.tools.Nature;
@@ -22,13 +23,13 @@ public class GameEngContract extends GameEngDecorator {
 	 * Init --------------------------------------------------------------------
 	 */
 	@Override
-	public void init(int sc, int sp, ILevel l) {
+	public void init(int sc, int sp, ILevel l, IJoueur j) {
 		try {
 			checkInitPreConditions(sc, sp);	
 			checkInvariants();
-			super.init(sc, sp,l);	
+			super.init(sc, sp, l, j);	
 			checkInvariants();
-			checkInitPostConditions(sc, sp,l);
+			checkInitPostConditions(sc, sp, l, j);
 		} catch (ContractError e) {			
 			ErrorHandler.printError(e);			
 			throw e;			
@@ -79,7 +80,7 @@ public class GameEngContract extends GameEngDecorator {
 		}
 	}
 
-	private void checkInitPostConditions(int sc, int sp, ILevel l) throws PostConditionError {
+	private void checkInitPostConditions(int sc, int sp, ILevel l, IJoueur j) throws PostConditionError {
 		if (!(getTour() == 0)) {
 			throw new PostConditionError("Init_GameEng : getTour() != 0");
 		}
@@ -104,6 +105,9 @@ public class GameEngContract extends GameEngDecorator {
 		if (!(getLevel() == l)) {
 			throw new PostConditionError("Init_GameEng : getLevel() != l");
 		}
+		if (!(getJoueur() == j)) {
+			throw new PostConditionError("Init_GameEng : getJoueur() != j");
+		}
 		if (!(getActivLemmings().isEmpty())) {
 			throw new PostConditionError("Init_GameEng : !getActivLemmings().isEmpty()");
 		}
@@ -120,13 +124,14 @@ public class GameEngContract extends GameEngDecorator {
 			int getNbLemmingCreated_atPre = getNbLemmingCreated();
 			int getNbLemmingSaved_atPre = getNbLemmingSaved();
 			ILevel getLevel_atPre = getLevel();
+			IJoueur getJoueur_atPre = getJoueur();
 			
 			checkStepPreConditions();	
 			checkInvariants();
 			super.step();	
 			checkInvariants();
 			checkStepPostConditions(getTour_atPre, getNbLemmingCreated_atPre,
-					getNbLemmingSaved_atPre, getLevel_atPre);
+					getNbLemmingSaved_atPre, getLevel_atPre, getJoueur_atPre);
 		} catch (ContractError e) {			
 			ErrorHandler.printError(e);			
 			throw e;			
@@ -141,7 +146,7 @@ public class GameEngContract extends GameEngDecorator {
 	
 	private void checkStepPostConditions(int getTour_atPre,
 			int getNbLemmingCreated_atPre, int getNbLemmingSaved_atPre,
-			ILevel getLevel_atPre) {
+			ILevel getLevel_atPre, IJoueur getJoueur_atPre) {
 		
 		if (!(getTour() == getTour_atPre + 1)) {
 			throw new PostConditionError("Step_GameEng : getTour() != getTour_atPre + 1");
@@ -164,6 +169,9 @@ public class GameEngContract extends GameEngDecorator {
 		}
 		if (!(getLevel() == getLevel_atPre)) {
 			throw new PostConditionError("Step_GameEng : getLevel() != getLevel_atPre");
+		}
+		if (!(getJoueur() == getJoueur_atPre)) {
+			throw new PostConditionError("Step_GameEng : getJoueur() != getJoueur_atPre");
 		}
 		for (ILemming lemming : getActivLemmings()) {
 			// TODO... getActivLemmings(Step())

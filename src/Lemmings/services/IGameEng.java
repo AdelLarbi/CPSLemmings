@@ -20,6 +20,7 @@ public interface IGameEng {
 	public int getNbLemmingCreated();
 	public int getNbLemmingSaved();
 	public ILevel getLevel();
+	public IJoueur getJoueur();
 	public ArrayList<ILemming> getActivLemmings();
 		
 
@@ -44,17 +45,18 @@ public interface IGameEng {
 	// CONSTRUCTORS ------------------------------------------------------------
 	/**
 	 *  \pre : sc > 0 && sp > 0
-	 *  \post : getTour(init(sc,sp,l)) == 0
-	 *  \post : getScore(init(sc,sp,l)) == 0
-	 *  \post : isGameOver(init(sc,sp,l)) == false
-	 *  \post : getSizeColony(init(sc,sp,l)) == sc
-	 *  \post : getSpawnSpeed(init(sc,sp,l)) == sp
-	 *  \post : getNbLemmingCreated(init(sc,sp,l)) == 0
-	 *  \post : getNbLemmingSaved(init(sc,sp,l)) == 0
-	 *  \post : getLevel(init(sc,sp,l)) == l
-	 *  \post : getActivLemmings(init(sc,sp,l)) = []
+	 *  \post : getTour(init(sc,sp,l,j)) == 0
+	 *  \post : getScore(init(sc,sp,l,j)) == 0
+	 *  \post : isGameOver(init(sc,sp,l,j)) == false
+	 *  \post : getSizeColony(init(sc,sp,l,j)) == sc
+	 *  \post : getSpawnSpeed(init(sc,sp,l,j)) == sp
+	 *  \post : getNbLemmingCreated(init(sc,sp,l,j)) == 0
+	 *  \post : getNbLemmingSaved(init(sc,sp,l,j)) == 0
+	 *  \post : getLevel(init(sc,sp,l,j)) == l
+	 *  \post : getJoueur(init(sc,sp,l,j)) == j
+	 *  \post : getActivLemmings(init(sc,sp,l,j)) = []
 	 **/
-	public void init(int x, int y, ILevel level);
+	public void init(int x, int y, ILevel level, IJoueur joueur);
 		
 	
 		
@@ -67,6 +69,7 @@ public interface IGameEng {
 	 *  \post : getNbLemmingSaved(step()) == FORALL ILemming IN getActivLemming()
 	 *  									 ILemming::isSaved() == true ==> getNbLemmingSaved()@Pre + 1
 	 *  \post : getLevel(step()) == getLevel()@Pre
+	 *  \post : getJoueur(step()) == getJoueur()@Pre
 	 *  \post : getActivLemming(step()) <==> FORALL ILemming in getActivLemming(step()) ILemming::step()
 	 */
 	public void step();

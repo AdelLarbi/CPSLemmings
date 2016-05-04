@@ -4,6 +4,7 @@ import Lemmings.implementations.GameEngImpl;
 import Lemmings.implementations.JoueurImpl;
 import Lemmings.implementations.LevelImpl;
 import Lemmings.services.IGameEng;
+import Lemmings.services.IJoueur;
 import Lemmings.services.ILevel;
 import Lemmings.tools.Nature;
 
@@ -49,14 +50,10 @@ public class LetsPlay {
 		}
 		
 		level.goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT);
-		 JoueurImpl j  = new JoueurImpl("adel", 8);
-		IGameEng g = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level,j);
-
-		
-		   
-           
-			//System.out.println("step suivante");
-		}
+		IJoueur j  = new JoueurImpl("adel", 8);
+		IGameEng g = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level, j);
+		//System.out.println("step suivante");
+	}
 }
 	
 

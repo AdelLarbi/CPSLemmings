@@ -1,5 +1,6 @@
 package Lemmings.decorators;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import Lemmings.services.IGameEng;
@@ -54,5 +55,10 @@ public abstract class JoueurDecorator implements IJoueur {
 	@Override
 	public void faireAction(ILemming l, Comportement instantComportement) {
 		delegate.faireAction(l, instantComportement);
+	}
+	
+	@Override
+	public void doPause(ArrayList<ILemming> lemming) {
+		delegate.doPause(lemming);
 	}
 }

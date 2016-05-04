@@ -1,5 +1,6 @@
 package Lemmings.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import Lemmings.tools.Comportement;
@@ -30,7 +31,7 @@ public interface IJoueur {
 	 *  \post : maxComportement(init(nom,nb,g)) = 4 
 	 *  \post : getJetons(init(nom,nb,g)) != null
 	 *  \post : getNbJetons(init(nom,nb,g)) = nb * maxComportement()
-	*/
+	 */
 	public void init(String name, int nb);
 	
 	
@@ -40,7 +41,7 @@ public interface IJoueur {
 	 *  \pre : getNbJetons() > 0 && l IN IGameEng::getActivLemmings()
 	 *  \post : getJetons(depenserJeton(c)) = getNbJetonsByComportement(c)@pre - 1  
 	 *  \post : getName(depenserJeton(c)) = getName()@pre
-	*/
+	 */
 	public void depenserJeton(Comportement c);
 	
 	
@@ -49,6 +50,13 @@ public interface IJoueur {
 	 *  \post : getJetons(faireAction(l,ic)) = getNbJetonsByComportement(c)@pre - 1  
 	 *  \post : getName(faireAction(l,ic)) = getName()@pre
 	 *  \post : ILemming::getComportement(faireAction(l ,ic)) = ic
-	*/
+	 */
 	public void faireAction(ILemming l, Comportement instantComportement);
+	
+	
+	/**
+	 *  \pre : TODO
+	 *  \post : TODO
+	 */
+	public void doPause(ArrayList<ILemming> lemming); 
 }

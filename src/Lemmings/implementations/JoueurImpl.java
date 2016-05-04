@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
-import Lemmings.services.IGameEng;
 import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.tools.Comportement;
@@ -19,11 +18,8 @@ public class JoueurImpl implements IJoueur {
 	String name;
 	final int maxComportement = 8;
 	public static final List<Comportement> liste_a_afficher = Collections.unmodifiableList(
-		    new ArrayList<Comportement>() {/**
-				 * 
-				 */
+		    new ArrayList<Comportement>() {
 				private static final long serialVersionUID = 1L;
-
 			{
 		        add(Comportement.WALKER);
 		        add(Comportement.DIGGER);
@@ -90,20 +86,19 @@ public class JoueurImpl implements IJoueur {
 		l.changeComportement(instantComportement);
 	}
 	
-	
-	public void affichagePause(ArrayList<ILemming> lems) {
+	@Override
+	public void doPause(ArrayList<ILemming> lemming) {
 		
 		System.out.println("Game Paused.");
 		String chaine = "Inventaire ";
 
 		Set cles = jetons.keySet();
 		Iterator it = cles.iterator();
-		while (it.hasNext()){
+		
+		while (it.hasNext()) {
 		   Comportement cle = (Comportement) it.next();
 		   Integer valeur = jetons.get(cle); 
-		   
-		   chaine = chaine + " Comportement : "+cle+" jetons : "+ valeur ;
-
+		   chaine = chaine + " Comportement : " + cle + " jetons : " + valeur; 
 		}
 
 		System.out.println(chaine);
@@ -116,14 +111,11 @@ public class JoueurImpl implements IJoueur {
 		liste_a_afficher.toString();
 		int c = keyboard.nextInt();
 
-		for (ILemming l : lems) {
+		for (ILemming l : lemming) {
 			if (l.getX() == x && l.getY() == y) {
-
 				faireAction(l, liste_a_afficher.get(c));
-
 			}
 		}
-
 	}
 
 

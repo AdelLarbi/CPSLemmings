@@ -3,6 +3,7 @@ package Lemmings.decorators;
 import java.util.ArrayList;
 
 import Lemmings.services.IGameEng;
+import Lemmings.services.IJoueur;
 import Lemmings.services.ILemming;
 import Lemmings.services.ILevel;
 
@@ -58,6 +59,11 @@ public abstract class GameEngDecorator implements IGameEng {
 	public ILevel getLevel() {
 		return delegate.getLevel();
 	}
+	
+	@Override
+	public IJoueur getJoueur() {
+		return delegate.getJoueur();
+	}
 
 	@Override
 	public ArrayList<ILemming> getActivLemmings() {
@@ -65,8 +71,8 @@ public abstract class GameEngDecorator implements IGameEng {
 	}
 
 	@Override
-	public void init(int x, int y, ILevel l) {
-		delegate.init(x, y,l);
+	public void init(int x, int y, ILevel l, IJoueur j) {
+		delegate.init(x, y, l, j);
 	}
 
 	@Override
