@@ -113,6 +113,7 @@ public class JoueurImpl implements IJoueur {
 
 		for (ILemming l : lemming) {
 			if (l.getX() == x && l.getY() == y) {
+				System.out.println(x +"ca marche "+y);
 				faireAction(l, liste_a_afficher.get(c));
 			}
 		}
