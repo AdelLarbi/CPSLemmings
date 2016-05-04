@@ -6,7 +6,9 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-	TestLevel.class
+	TestLevel.class,
+	TestGamEng.class,
+	TestLemming.class
 })
 
 public class TestsWithoutContract {}

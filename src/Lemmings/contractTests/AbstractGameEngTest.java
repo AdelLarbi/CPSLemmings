@@ -23,7 +23,7 @@ public abstract class AbstractGameEngTest {
 	final int SPAWN_SPEED = 2;
 	
 	protected IGameEng gameEng;
-	ILevel level;
+	protected ILevel level;
 	IJoueur joueur;
 	
 	public abstract void beforeTesting();
