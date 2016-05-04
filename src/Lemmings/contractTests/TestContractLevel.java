@@ -246,7 +246,7 @@ public class TestContractLevel extends AbstractLevelTest {
 	
 	private void prepareGoPlayTest(Nature nature) {
 		
-		level.init(100, 80);
+		//level.init(100, 80);
 		
 		for (int j = 0; j < level.getHeight(); j++) {	
 			for (int i = 0; i < level.getWidth(); i++) {
@@ -271,9 +271,148 @@ public class TestContractLevel extends AbstractLevelTest {
 	 * goEditing ---------------------------------------------------------------
 	 * @no @param
 	 */	
-	@Test(expected=PreConditionError.class)
+	/*@Test(expected=PreConditionError.class)
 	public void level_getEditing_2() {
 		level.goEditing();
 		level.goEditing();	
+	}*/
+	
+	/**
+	 * remove ---------------------------------------------------------------
+	 * @param x
+	 * @param y
+	 */	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_13() {
+		prepareReomveTest(46, 55, Nature.METAL);
+		level.remove(46, 55);
+	}
+	
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_14() {
+		level.goEditing();
+		level.remove(46, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_15() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(0, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_16() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(99, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_17() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(46, 0);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_18() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(46, 79);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_19() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(8, 11);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_remove_20() {
+		prepareReomveTest(46, 55, Nature.DIRT);
+		level.remove(91, 76);
+	}
+	
+	private void prepareReomveTest(int x, int y, Nature nature) {
+		//TODO rewrite it correctly in tests/Level.test
+		//level.init(100, 80);
+		
+		level.goEditing();
+		
+		for (int j = 0; j < level.getHeight(); j++) {	
+			for (int i = 0; i < level.getWidth(); i++) {
+				if (i == 0 || j == level.getHeight() -1 || i == level.getWidth() -1 || j == 0) {
+					level.setNature(i, j, Nature.METAL);
+				}
+			}
+		}
+		
+		level.setNature(8, 10, Nature.EMPTY);
+		level.setNature(8, 11, Nature.EMPTY);
+		level.setNature(8, 12, Nature.EMPTY);
+		
+		level.setNature(91, 75, Nature.METAL);
+		level.setNature(91, 76, Nature.EMPTY);
+		level.setNature(91, 77, Nature.EMPTY);
+		
+		level.setNature(x, y, nature);
+		
+		level.goPlay(8, 11, 91, 76);
+	}
+	
+	/**
+	 * build -------------------------------------------------------------------
+	 * @param x
+	 * @param y
+	 */	
+	@Test(expected=PreConditionError.class)
+	public void level_build_13() {
+		prepareBuildTest(46, 55, Nature.DIRT);
+		level.build(46, 55);
+	}
+	
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_14() {
+		level.goEditing();
+		level.build(46, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_15() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(0, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_16() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(99, 55);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_17() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(46, 0);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_18() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(46, 79);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_19() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(8, 11);
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void level_build_20() {
+		prepareReomveTest(46, 55, Nature.EMPTY);
+		level.build(91, 76);
+	}
+	
+	private void prepareBuildTest(int x, int y, Nature nature) {
+		prepareReomveTest(x, y, nature);
 	}
 }

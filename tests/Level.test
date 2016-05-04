@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------------
 -  Service : Level
--  Total tests : 107
+-  Total tests : 106
 -          |_ positifs : 50
--          |_ negatifs : 57
+-          |_ negatifs : 56
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -448,11 +448,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations :
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,1,41,Nature.EMPTY)
 	setNature(L,1,42,Nature.EMPTY)
@@ -477,11 +477,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,1,Nature.EMPTY)
 	setNature(L,30,2,Nature.EMPTY)
@@ -506,11 +506,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,40,Nature.EMPTY)
 	setNature(L,30,41,Nature.EMPTY)
@@ -535,11 +535,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,40,Nature.EMPTY)
 	setNature(L,30,41,Nature.EMPTY)
@@ -564,11 +564,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,98,41,Nature.EMPTY)
 	setNature(L,98,42,Nature.EMPTY)
@@ -593,11 +593,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,76,Nature.EMPTY)
 	setNature(L,30,77,Nature.EMPTY)
@@ -622,11 +622,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,40,Nature.EMPTY)
 	setNature(L,30,41,Nature.EMPTY)
@@ -651,11 +651,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,30,40,Nature.EMPTY)
 	setNature(L,30,41,Nature.EMPTY)
@@ -680,11 +680,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,90,54,Nature.EMPTY)
 	setNature(L,90,55,Nature.EMPTY)
@@ -709,11 +709,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,90,54,Nature.EMPTY)
 	setNature(L,90,55,Nature.EMPTY)
@@ -738,11 +738,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,90,54,Nature.EMPTY)
 	setNature(L,90,55,Nature.EMPTY)
@@ -767,11 +767,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,55,63,Nature.EMPTY)
 	setNature(L,55,64,Nature.EMPTY)
@@ -796,12 +796,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
-	
 	setNature(L,64,54,Nature.EMPTY)
 	setNature(L,64,55,Nature.EMPTY)
 	setNature(L,64,56,Nature.EMPTY)
@@ -825,11 +824,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,64,63,Nature.EMPTY)
 	setNature(L,64,64,Nature.EMPTY)
@@ -854,11 +853,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations :
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,64,63,Nature.EMPTY)
 	setNature(L,64,64,Nature.EMPTY)
@@ -883,11 +882,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.DIRT))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -933,11 +932,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -959,11 +958,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -985,11 +984,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1011,11 +1010,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1037,11 +1036,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1063,11 +1062,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1089,11 +1088,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1115,11 +1114,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1141,11 +1140,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1167,11 +1166,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.DIRT)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1193,11 +1192,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.DIRT)
@@ -1219,11 +1218,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1245,11 +1244,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1271,11 +1270,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1297,11 +1296,11 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 	
+	goEditing(L)
+	
 	(FORALL (x,y) / (x=0 && 0<=y<height()) || (y=0 && 0<=x<width()) 
 	|| (x=width()-1 && 0<=y<height()) || (y=height()-1 && 0<=x<width()) 
 	setNature(L,x,y,Nature.METAL))
-	
-	goEditing(L)
 	
 	setNature(L,8,10,Nature.EMPTY)
 	setNature(L,8,11,Nature.EMPTY)
@@ -1353,9 +1352,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,0,55,Nature.DIRT)
+	setNature(L,1,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	remove(L,1,55)
 Oracle : 
@@ -1372,9 +1371,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,99,55,Nature.DIRT)
+	setNature(L,98,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	remove(L,98,55)
 Oracle : 
@@ -1393,7 +1392,7 @@ Opérations :
 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	remove(L,46,55)
 Oracle : 
@@ -1410,9 +1409,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,0,Nature.DIRT)
+	setNature(L,46,1,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	remove(L,46,1)
 Oracle : 
@@ -1429,9 +1428,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,46,78,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,78)
 Oracle : 
@@ -1450,7 +1449,7 @@ Opérations :
 
 	setNature(L,46,46,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,46)
 Oracle : 
@@ -1467,9 +1466,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,8,78,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,8,78)
 Oracle : 
@@ -1486,9 +1485,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,46,11,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,11)
 Oracle : 
@@ -1505,9 +1504,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,91,78,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,91,78)
 Oracle : 
@@ -1524,9 +1523,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,46,77,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,77)
 Oracle : 
@@ -1543,9 +1542,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,8,77,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,8,77)
 Oracle : 
@@ -1562,13 +1561,13 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.DIRT)
+	setNature(L,91,11,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,91,11)
 Oracle : 
-	nature(L,46,79) = Nature.EMPTY
+	nature(L,91,11) = Nature.EMPTY
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1582,7 +1581,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.METAL)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,55)
 Oracle : 	
@@ -1612,7 +1611,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,0,55)
 Oracle : 	
@@ -1627,7 +1626,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,99,55)
 Oracle : 	
@@ -1642,7 +1641,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,0)
 Oracle : 	
@@ -1657,7 +1656,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,46,79)
 Oracle : 	
@@ -1672,7 +1671,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	remove(L,8,11)
 Oracle : 	
@@ -1687,9 +1686,9 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
-	remove(L,91,77)
+	remove(L,91,76)
 Oracle : 	
 	Exception {
 		remove : x == getXExit() && y == getYExit()
@@ -1703,9 +1702,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,0,55,Nature.EMPTY)
+	setNature(L,1,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	build(L,1,55)
 Oracle : 
@@ -1722,9 +1721,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,99,55,Nature.EMPTY)
+	setNature(L,98,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	build(L,98,55)
 Oracle : 
@@ -1743,7 +1742,7 @@ Opérations :
 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	build(L,46,55)
 Oracle : 
@@ -1760,9 +1759,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,0,Nature.EMPTY)
+	setNature(L,46,1,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 
 	build(L,46,1)
 Oracle : 
@@ -1779,9 +1778,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,78,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,78)
 Oracle : 
@@ -1800,7 +1799,7 @@ Opérations :
 
 	setNature(L,46,46,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,46)
 Oracle : 
@@ -1817,9 +1816,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,78,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,8,78)
 Oracle : 
@@ -1836,9 +1835,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,78,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,11)
 Oracle : 
@@ -1855,9 +1854,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,78,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,91,78)
 Oracle : 
@@ -1874,9 +1873,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,77,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,77)
 Oracle : 
@@ -1893,9 +1892,9 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,46,77,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,8,77)
 Oracle : 
@@ -1912,13 +1911,13 @@ Conditions initiales :
 	L = init(100,80)
 Opérations : 
 
-	setNature(L,46,79,Nature.EMPTY)
+	setNature(L,91,11,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,91,11)
 Oracle : 
-	nature(L,46,79) = Nature.DIRT
+	nature(L,91,11) = Nature.DIRT
 	isEditing(L) == isEditing(L)@Pre
 	xEntrance(L) == xEntrance(L)@pre
 	yEntrance(L) == yEntrance(L)@pre
@@ -1932,7 +1931,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.DIRT)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,55)
 Oracle : 	
@@ -1962,7 +1961,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,0,55)
 Oracle : 	
@@ -1977,7 +1976,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,99,55)
 Oracle : 	
@@ -1992,7 +1991,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,0)
 Oracle : 	
@@ -2007,7 +2006,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,46,79)
 Oracle : 	
@@ -2022,7 +2021,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,8,11)
 Oracle : 	
@@ -2037,7 +2036,7 @@ Conditions initiales :
 Opérations : 
 	setNature(L,46,55,Nature.EMPTY)
 	
-	goPlay(L, 8, 11, 91, 77)
+	goPlay(L, 8, 11, 91, 76)
 	
 	build(L,91,77)
 Oracle : 	
