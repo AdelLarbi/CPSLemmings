@@ -15,31 +15,6 @@ public class TestContractLevel extends AbstractLevelTest {
 	public void beforeTesting() {
 		level = new LevelContract(new LevelImpl(100, 80));		
 	}
-
-	/**
-	 * Init --------------------------------------------------------------------
-	 * @param width
-	 * @param height
-	 */	
-	@Test(expected=PreConditionError.class)
-	public void level_Init_5() {						
-		level.init(4, 80);		
-	}
-	
-	@Test(expected=PreConditionError.class)
-	public void level_Init_6() {						
-		level.init(20, 4);		
-	}
-	
-	@Test(expected=PreConditionError.class)
-	public void level_Init_7() {						
-		level.init(-1, 80);		
-	}
-	
-	@Test(expected=PreConditionError.class)
-	public void level_Init_8() {						
-		level.init(20, -3);		
-	}
 	
 	/**
 	 * setNature ---------------------------------------------------------------

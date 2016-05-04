@@ -2,19 +2,30 @@ package Lemmings.contractTests;
 
 import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import Lemmings.factory.FactoryImpl;
+import Lemmings.implementations.GameEngImpl;
 import Lemmings.services.IGameEng;
 import Lemmings.services.IJoueur;
 import Lemmings.services.ILevel;
 
 public abstract class AbstractGameEngTest {
 
-	protected IGameEng gameEng;
+	final int WIDTH = 13;
+	final int HEIGHT = 11;
 	
-	@Before
+	final int X_ENTRANCE = 2;
+	final int Y_ENTRANCE = 2;
+	final int X_EXIT = 10;
+	final int Y_EXIT = 9;
+	
+	final int SIZE_COLONY = 5;
+	final int SPAWN_SPEED = 2;
+	
+	protected IGameEng gameEng;
+	ILevel level;
+	IJoueur joueur;
+	
 	public abstract void beforeTesting();
 	
 	@After
@@ -32,7 +43,7 @@ public abstract class AbstractGameEngTest {
 	
 	@Test
 	public void gameEng_Init_2() {
-		testGameEngInitWith(999, 10);						 					
+		testGameEngInitWith(99, 10);						 					
 	}
 	
 	@Test
@@ -42,7 +53,7 @@ public abstract class AbstractGameEngTest {
 	
 	@Test
 	public void gameEng_Init_4() {
-		testGameEngInitWith(13, 999);						 					
+		testGameEngInitWith(13, 99);						 					
 	}
 	
 	@Test
@@ -57,10 +68,7 @@ public abstract class AbstractGameEngTest {
 	
 	private void testGameEngInitWith(int sizeColony, int spawnSpeed) {			
 		
-		ILevel level = new FactoryImpl().makeLevel(100, 80);
-		IJoueur joueur = new FactoryImpl().makeJoueur("Player1", 5);
-		
-		gameEng.init(sizeColony, spawnSpeed, level, joueur);
+		gameEng = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level, joueur);
 		
 		Assert.assertTrue("Test GameEng Init : ",
 				gameEng.getTour() == 0
@@ -73,6 +81,41 @@ public abstract class AbstractGameEngTest {
 			 && gameEng.getLevel() == level
 			 && gameEng.getJoueur() == joueur
 			 && gameEng.getActivLemmings().isEmpty()
+		);
+	}
+	
+	/**
+	 * Step --------------------------------------------------------------------
+	 */
+	@Test
+	public void gameEng_step_1() {
+		testGameEngStepWith();						 					
+	}
+	
+	private void testGameEngStepWith() {			
+		
+		int getTour_atPre = gameEng.getTour();
+		ILevel getLevel_atPre = gameEng.getLevel();
+		IJoueur getJoueur_atPre = gameEng.getJoueur();
+		int getNbLemmingCreated_atPre = gameEng.getNbLemmingCreated();
+		boolean error = false;
+		//for (int i = 0; i < getMaxTour(); i++) {
+		//TODO test for all game steps. Done just one step, i thik it's enough..
+		int i = 0;	
+		if (i % gameEng.getSpawnSpeed() == 0 && gameEng.getNbLemmingCreated() < gameEng.getSizeColony()) {
+			if (!(gameEng.getNbLemmingCreated() == getNbLemmingCreated_atPre + 1)) {
+				error = true;
+			}
+		}
+		//}
+		gameEng.step();
+		
+		Assert.assertTrue("Test GameEng Step : ",
+				gameEng.getTour() == getTour_atPre
+			 && gameEng.getNbLemmingSaved() == 0
+			 && gameEng.getLevel() == getLevel_atPre
+			 && gameEng.getJoueur() == getJoueur_atPre
+			 && !error
 		);
 	}
 }

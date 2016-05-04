@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------------
 -  Service : Level
--  Total tests : 106
+-  Total tests : 104
 -          |_ positifs : 50
--          |_ negatifs : 56
+-          |_ negatifs : 54
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -97,10 +97,10 @@ Oracle :
 Conditions initiales :
 	aucunes
 Opérations : 
-	L = init(4,80)
+	L = init(-1,80)
 Oracle : 	
 	Exception {
-		Init_Level : x <= 4
+		javaError : NegativeArraySizeException
 	}
 --------------------------------------------------------------------------------
 [Test 1.6]: testInit6 | Negatif
@@ -108,10 +108,10 @@ Oracle :
 Conditions initiales :
 	aucunes
 Opérations : 
-	L = init(20,4)
+	L = init(20,-3)
 Oracle : 	
 	Exception {
-		Init_Level : y <= 4
+		javaError : NegativeArraySizeException
 	}
 --------------------------------------------------------------------------------
 [Test 1.7]: testInit7 | Negatif
@@ -119,10 +119,10 @@ Oracle :
 Conditions initiales :
 	aucunes
 Opérations : 
-	L = init(-1,80)
+	L = init(1,49)
 Oracle : 	
 	Exception {
-		Init_Level : x <= 4
+		init : x <= 4
 	}
 --------------------------------------------------------------------------------
 [Test 1.8]: testInit8 | Negatif
@@ -130,10 +130,10 @@ Oracle :
 Conditions initiales :
 	aucunes
 Opérations : 
-	L = init(20,-3)
+	L = init(14,2)
 Oracle : 	
 	Exception {
-		Init_Level : y <= 4
+		init : y <= 4
 	}
 --------------------------------------------------------------------------------
 [Test 2]: setNature

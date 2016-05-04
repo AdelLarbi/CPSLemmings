@@ -27,7 +27,7 @@ public class LetsPlay {
 	public static void main(String[] args) {
 		
 		ILevel level = new LevelImpl(WIDTH, HEIGHT);
-		level = new LevelContract(level);
+		//level = new LevelContract(level);
 		if (level.isEditing()) {
 			level.setNature(1, 4, Nature.METAL);
 			level.setNature(2, 4, Nature.METAL);
@@ -54,7 +54,7 @@ public class LetsPlay {
 		
 		level.goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT);
 		IJoueur j  = new JoueurImpl("adel", 8);
-		j = new JoueurContract(j);
+		//j = new JoueurContract(j);
 		IGameEng g = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level, j);
 		g = new GameEngContract(g);
 		//System.out.println("step suivante");

@@ -1,0 +1,598 @@
+--------------------------------------------------------------------------------
+-  Service : GameEng
+-  Total tests : 10
+-          |_ positifs : 06
+-          |_ negatifs : 04
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+[Test 1]: Init
+--------------------------------------------------------------------------------
+[Test 1.1]: testInit1 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(1,10,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 1
+	getSpawnSpeed(G) == 10
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.2]: testInit2 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(99,10,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 99
+	getSpawnSpeed(G) == 10
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.3]: testInit3 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(13,1,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 13
+	getSpawnSpeed(G) == 1
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.4]: testInit4 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(13,99,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 13
+	getSpawnSpeed(G) == 99
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.5]: testInit5 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(6,6,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 6
+	getSpawnSpeed(G) == 6
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.6]: testInit6 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(1,10,L,J)
+Oracle : 	
+	tour(G) == 0
+	score(G) == 0
+	isGameOver(G) == false
+	getSizeColony(G) == 25
+	getSpawnSpeed(G) == 4
+	getNbLemmingCreated(G) == 0
+	getNbLemmingSaved(G) == 0
+	getLevel(G) == L
+	getJoueur(G) == J
+	getActivLemmings(G) == []
+--------------------------------------------------------------------------------
+[Test 1.7]: testInit7 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(-1,10,L,J)
+Oracle : 	
+	Exception {
+		javaError : NegativeArraySizeException
+	}
+--------------------------------------------------------------------------------
+[Test 1.8]: testInit8 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(6,-2,L,J)
+Oracle : 	
+	Exception {
+		javaError : NegativeArraySizeException
+	}
+--------------------------------------------------------------------------------
+[Test 1.9]: testInit9 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(0,10,L,J)
+Oracle : 	
+	Exception {
+		init : sc <=0
+	}
+--------------------------------------------------------------------------------
+[Test 1.10]: testInit10 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+Operations : 
+	G = init(24,0,L,J)
+Oracle : 	
+	Exception {
+		init : sp <=0
+	}
+--------------------------------------------------------------------------------
+[Test 2]: Step
+--------------------------------------------------------------------------------
+[Test 2.1]: testStep1 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	L = ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = init(25,4,L,J)
+Operations : 
+	step()
+Oracle : 	
+
+	tour(G) == tour(G)@pre
+	getNbLemmingCreated(G) == getNbLemmingCreated(G)@pre
+	getNbLemmingSaved(G) == getNbLemmingSaved(G)@pre
+	getLevel(G) == getLevel(G)@pre
+	getJoueur(G) == getJoueur(G)@pre
+	getActivLemmings(G) == FORALL ILemming in getActivLemming(G) ILemming::step()

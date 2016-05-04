@@ -1,38 +1,26 @@
 package Lemmings.contractTests;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import Lemmings.contract.GameEngContract;
 import Lemmings.contract.JoueurContract;
 import Lemmings.contract.LevelContract;
-import Lemmings.factory.FactoryImpl;
+import Lemmings.error.PreConditionError;
 import Lemmings.implementations.GameEngImpl;
 import Lemmings.implementations.JoueurImpl;
 import Lemmings.implementations.LevelImpl;
-import Lemmings.services.IGameEng;
-import Lemmings.services.IJoueur;
-import Lemmings.services.ILevel;
 import Lemmings.tools.Nature;
 
 public class TestContractGameEng extends AbstractGameEngTest {
-	
-	static final int WIDTH = 13;
-	static final int HEIGHT = 11;
-	
-	static final int X_ENTRANCE = 2;
-	static final int Y_ENTRANCE = 2;
-	static final int X_EXIT = 10;
-	static final int Y_EXIT = 9;
-	
-	static final int SIZE_COLONY = 5;
-	static final int SPAWN_SPEED = 2;
 	
 	@Override
 	@Before
 	public void beforeTesting() {
 		
-		ILevel level = new LevelImpl(WIDTH, HEIGHT);
+		level = new LevelImpl(WIDTH, HEIGHT);
 		level = new LevelContract(level);
+		
 		if (level.isEditing()) {
 			level.setNature(1, 4, Nature.METAL);
 			level.setNature(2, 4, Nature.METAL);
@@ -58,8 +46,43 @@ public class TestContractGameEng extends AbstractGameEngTest {
 		}
 		
 		level.goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT);
-		IJoueur joueur  = new JoueurImpl("PlayerLambda", 8);
+		
+		joueur  = new JoueurImpl("PlayerLambda", 8);
 		joueur = new JoueurContract(joueur);
-		gameEng = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level, joueur);		
 	}
+	
+	/**
+	 * init -------------------------------------------------------------
+	 * @no @param
+	 */		
+	@Test(expected=NegativeArraySizeException.class)
+	public void gameEng_init_7() {
+		gameEng  = new GameEngContract(new GameEngImpl(-1, 10, level, joueur));
+	}
+	
+	@Test(expected=NegativeArraySizeException.class)
+	public void gameEng_init_8() {
+		gameEng  = new GameEngContract(new GameEngImpl(6, -2, level, joueur));
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void gameEng_init_9() {
+		gameEng  = new GameEngContract(new GameEngImpl(0, 10, level, joueur));
+	}
+	
+	@Test(expected=PreConditionError.class)
+	public void gameEng_init_10() {
+		gameEng  = new GameEngContract(new GameEngImpl(24, 0, level, joueur));
+	}
+	
+	/**
+	 * step -------------------------------------------------------------
+	 * @no @param
+	 */		
+	@Test(expected=PreConditionError.class)
+	public void gameEng_step_2() {
+		gameEng = new GameEngImpl(SIZE_COLONY, SPAWN_SPEED, level, joueur);
+		gameEng.step();
+	}
+	
 }
