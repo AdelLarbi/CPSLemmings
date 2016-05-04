@@ -113,7 +113,7 @@ public class LemmingImpl implements ILemming {
  
 		 if (getComportement().contains(Comportement.DIGGER) 
 					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.EMPTY) {
-				System.out.println("cas 9");
+				//System.out.println("cas 9");
 				comportement.remove(Comportement.DIGGER);
 				comportement.add(Comportement.FALLER);
 				xLemming = getX_atPre;
@@ -122,7 +122,7 @@ public class LemmingImpl implements ILemming {
 				// Case 10:
 			} else if (getComportement().contains(Comportement.DIGGER)
 					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.METAL) {
-				System.out.println("cas 10");
+				//System.out.println("cas 10");
 				comportement.remove(Comportement.DIGGER);
 				comportement .add(Comportement.WALKER);
 				xLemming = getX_atPre;
@@ -131,7 +131,7 @@ public class LemmingImpl implements ILemming {
 				// Case 11:
 			} else if (getComportement().contains(Comportement.DIGGER)
 					&& getGameEng().getLevel().getNature(getX(), getY() + 1) == Nature.DIRT) {
-				System.out.println("cas 11");
+				//System.out.println("cas 11");
 				comportement.remove(Comportement.DIGGER);
 				comportement.add(Comportement.WALKER);
 				xLemming = getX_atPre;
@@ -145,17 +145,17 @@ public class LemmingImpl implements ILemming {
 				
 			}else if (getComportement().contains(Comportement.FALLER) && !getComportement().contains(Comportement.CLIMBER)
 				&& (core.isObstacle(getX(), getY() + 1) && falling_atPre >= 8)) {
-			System.out.println("cas 8.a");
+			//System.out.println("cas 8.a");
 			isDead = true;
 			System.out.println(isDead);
 		// Case 8.b:
 		} else if (getX() == xExit && getY() == yExit) {
-			System.out.println("cas 8.b");
+		//	System.out.println("cas 8.b");
 			isSaved = true;
 		// Case 1:
 	    } else if (getComportement().contains(Comportement.WALKER)
 				&& !(core.isObstacle(getX(), getY() + 1))) {
-	    	System.out.println("cas 1");
+	    //	System.out.println("cas 1");
 	    	comportement.remove(Comportement.WALKER);
 	    	comportement.add(Comportement.FALLER);
 			xLemming = getX_atPre;
@@ -167,7 +167,7 @@ public class LemmingImpl implements ILemming {
 				&& isDroitier == true
 				&& (core.isObstacle(getX(), getY() + 1) && (core.isObstacle(
 						getX() + 1, getY() - 1)))) {
-			System.out.println("cas 2.a");
+		//	System.out.println("cas 2.a");
 			xLemming = getX_atPre;
 			yLemming = getY_atPre;
 			isDroitier = false;
@@ -177,7 +177,7 @@ public class LemmingImpl implements ILemming {
 				&& isDroitier == false
 				&& (core.isObstacle(getX(), getY() + 1) && (core.isObstacle(
 						getX() - 1, getY() - 1)))) {
-			System.out.println("cas 2.b");
+		//	System.out.println("cas 2.b");
 			xLemming = getX_atPre;
 			yLemming = getY_atPre;
 			isDroitier = true;
@@ -188,7 +188,7 @@ public class LemmingImpl implements ILemming {
 				&& (core.isObstacle(getX(), getY() +1)
 						&& (core.isObstacle(getX() + 1, getY())) && (core
 							.isObstacle(getX() + 1, getY() - 2)))) {
-			System.out.println("cas 3.a");
+		//	System.out.println("cas 3.a");
 			xLemming = getX_atPre;
 			yLemming = getY_atPre;
 			isDroitier = false;
@@ -199,7 +199,7 @@ public class LemmingImpl implements ILemming {
 				&& (core.isObstacle(getX(), getY() + 1)
 						&& (core.isObstacle(getX() - 1, getY())) && (core
 							.isObstacle(getX() - 1, getY() - 2)))) {
-			System.out.println("cas 3.b");
+		//	System.out.println("cas 3.b");
 			xLemming = getX_atPre;
 			yLemming = getY_atPre;
 			isDroitier = true;
@@ -211,7 +211,7 @@ public class LemmingImpl implements ILemming {
 						&& (core.isObstacle(getX() + 1, getY()))
 						&& !(core.isObstacle(getX() + 1, getY() -1)) && !(core
 							.isObstacle(getX() + 1, getY() - 2)))) {
-			System.out.println("cas 4.a");
+		//	System.out.println("cas 4.a");
 			xLemming = getX_atPre + 1;
 			yLemming = getY_atPre - 1;
 			isDroitier = true;
@@ -223,7 +223,7 @@ public class LemmingImpl implements ILemming {
 						&& (core.isObstacle(getX() - 1, getY()))
 						&& !(core.isObstacle(getX() - 1, getY() -1)) && !(core
 							.isObstacle(getX() - 1, getY() - 2)))) {
-			System.out.println("cas 4.b");
+		//	System.out.println("cas 4.b");
 			xLemming = getX_atPre - 1;
 			yLemming = getY_atPre - 1;
 			isDroitier = true;
@@ -235,7 +235,7 @@ public class LemmingImpl implements ILemming {
 				&& !core.isObstacle(getX() + 1, getY()) 
 				&& !core.isObstacle(getX() + 1, getY() - 1)) {
 			
-			System.out.println("cas 5.a");
+		//	System.out.println("cas 5.a");
 			xLemming = getX_atPre + 1;
 			yLemming = getY_atPre;
 			isDroitier = true;
@@ -247,7 +247,7 @@ public class LemmingImpl implements ILemming {
 				&& !core.isObstacle(getX() - 1, getY()) 
 				&& !core.isObstacle(getX() - 1, getY() - 1)) {
 			
-			System.out.println("cas 5.b");
+		//	System.out.println("cas 5.b");
 			xLemming = getX_atPre - 1;
 			yLemming = getY_atPre;
 			isDroitier = false;
@@ -258,7 +258,7 @@ public class LemmingImpl implements ILemming {
 				&& isDroitier == true
 				&& !core.isObstacle(getX(), getY() + 1)) {
 			
-			System.out.println("cas 6.a ");
+		//	System.out.println("cas 6.a ");
 			//System.out.println("Type (" + getX() + ", " + getY() + ") -> " + core.getLevel().getNature(getX(), getY()));
 			//System.out.println("\\PRE");
 			//System.out.println("X -> " + getX() + " Y -> " + getY());
@@ -276,7 +276,7 @@ public class LemmingImpl implements ILemming {
 				&& isDroitier == false
 				&& !core.isObstacle(getX(), getY() + 1)) {
 			
-			System.out.println("cas 6b");
+		//	System.out.println("cas 6b");
 			xLemming = getX_atPre;
 			yLemming = getY_atPre +1;
 			isDroitier = false;
@@ -285,7 +285,7 @@ public class LemmingImpl implements ILemming {
 		} else if (getComportement().contains(Comportement.FALLER) && !getComportement().contains(Comportement.CLIMBER)
 				&& isDroitier == true
 				&& (core.isObstacle(getX(), getY() + 1) && falling_atPre < 8)) {
-			System.out.println("cas 7.a");
+		//	System.out.println("cas 7.a");
 			comportement.remove(Comportement.FALLER);
 			comportement.add(Comportement.WALKER);
 			xLemming = getX_atPre;
@@ -296,7 +296,7 @@ public class LemmingImpl implements ILemming {
 		} else if (getComportement().contains(Comportement.FALLER) && !getComportement().contains(Comportement.CLIMBER)
 				&& isDroitier == false
 				&& (core.isObstacle(getX(), getY() + 1) && falling_atPre < 8)) {
-			System.out.println("cas 7.b");
+		//	System.out.println("cas 7.b");
 			comportement.remove(Comportement.FALLER);
 			comportement.add(Comportement.WALKER);
 			xLemming = getX_atPre;
@@ -308,7 +308,7 @@ public class LemmingImpl implements ILemming {
 			    && core.isObstacle(getX()+1, getY()) && core.isObstacle(getX() + 1, getY() + 1)  
 			    && getGameEng().getLevel().getNature(getX(), getY()+1) == Nature.EMPTY
 			    && getGameEng().getLevel().getNature(getX(), getY()+2) == Nature.EMPTY) {
-			System.out.println("cas 12.a");
+		//	System.out.println("cas 12.a");
 			// Case 12.a:
 			isDroitier = true;
 			xLemming = getX_atPre;
@@ -318,7 +318,7 @@ public class LemmingImpl implements ILemming {
 			    && core.isObstacle(getX()-1, getY()) && core.isObstacle(getX() - 1, getY() + 1)  
 			    && getGameEng().getLevel().getNature(getX(), getY()+1) == Nature.EMPTY
 			    && getGameEng().getLevel().getNature(getX(), getY()+2) == Nature.EMPTY) {
-			System.out.println("cas 12.b");
+		//	System.out.println("cas 12.b");
 			isDroitier = false;
 			xLemming = getX_atPre;
 			yLemming = getY_atPre + 1;
