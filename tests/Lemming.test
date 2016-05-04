@@ -1,0 +1,1851 @@
+--------------------------------------------------------------------------------
+-  Service : Lemming
+-  Total tests : 
+-          |_ positifs : 
+-          |_ negatifs : 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+[Test 1]: Init
+--------------------------------------------------------------------------------
+[Test 1.1]: testInit1 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.2]: testInit2 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.FALLER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.3]: testInit3 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.DIGGER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.4]: testInit4 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.CLIMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.5]: testInit5 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.BUILDER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.6]: testInit6 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.FLOATER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.7]: testInit7 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.8]: testInit8 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.STOPPER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.9]: testInit9 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.BASHER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.10]: testInit10 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER,Comportement.DIGGER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.11]: testInit11 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER,Comportement.CLIMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.12]: testInit12 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER,Comportement.FLOATER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.13]: testInit13 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.BUILDER,Comportement.CLIMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.14]: testInit14 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.DIGGER,Comportement.FLOATER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.15]: testInit15 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.BASHER,Comportement.FLOATER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+
+--------------------------------------------------------------------------------
+[Test 1.12]: testInit16 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER,Comportement.CLIMBER, Comportement.FLOATER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.17]: testInit17 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.CLIMBER,Comportement.FLOATER, Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.18]: testInit18 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.FALLER,Comportement.CLIMBER, Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.19]: testInit19 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.DIGGER,Comportement.CLIMBER, Comportement.FLOATER, Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.20]: testInit20 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.STOPPER,Comportement.FLOATER, Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 1.21]: testInit21 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Operations : 
+	c = {Comportement.WALKER,Comportement.FLOATER, Comportement.CLIMBER, Comportement.BOMBER}
+	L = init(c,G)
+Oracle : 
+	 isDroitier(L) == True
+	 comportement(L) == c
+	 x(L) == IGameEng::ILevel::xEntrance
+	 y(L) == IGameEng::ILevel::yEntrance
+	 falling(L) == 0
+	 gameEng(L) == G
+	 isDead(L) == false
+	 isSaved(L) == false
+	 dalles(L) == 0
+	 builderDelay(L) == 0
+	 bomberDelay(L) == 5
+	 basherDelay(L) == 20
+--------------------------------------------------------------------------------
+[Test 2.22]: testInit22 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : card(c) > 0
+	}
+--------------------------------------------------------------------------------
+[Test 2.23]: testInit23 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {Comportement.WALKER,Comportement.FLOATER, Comportement.FALLER}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : (WALKER && FALLER) IN c
+	}
+--------------------------------------------------------------------------------
+[Test 2.24]: testInit24 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {Comportement.DIGGER, Comportement.FALLER}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : (FALLER && DIGGER) IN c
+	}
+--------------------------------------------------------------------------------
+[Test 2.25]: testInit25 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {Comportement.DIGGER, Comportement.BUILDER}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : (DIGGER && BUILDER) IN c
+	}
+--------------------------------------------------------------------------------
+[Test 2.26]: testInit26 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {Comportement.WALKER, Comportement.BASHER, Comportement.FALLER}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : (WALKER && BASHER) IN c
+		init : (FALLER && BASHER) IN c
+	}
+--------------------------------------------------------------------------------
+[Test 2.27]: testInit27 | Negatif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+Opérations : 
+    c = {Comportement.WALKER, Comportement.BASHER, Comportement.FALLER}
+	L = init(c,G)
+Oracle : 	
+	Exception {
+		init : (WALKER && BASHER) IN c
+		init : (FALLER && BASHER) IN c
+	}
+--------------------------------------------------------------------------------
+[Test 2]: Step
+--------------------------------------------------------------------------------
+[Test 2.1]: testStep | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+	
+	c = {Comportement.WALKER}
+	L = init(c,G)
+Operations : 
+	step()
+Oracle : 
+	 "/!\ many cases.. implemented directly in java"
+--------------------------------------------------------------------------------
+[Test 3]: changeComportement
+--------------------------------------------------------------------------------
+[Test 3.1]: testChangeComportement1 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+	
+	c = {Comportement.WALKER}
+	L = init(c,G)
+Operations : 
+	changeComportement(Comportement.WALKER)
+Oracle : 
+	 isDroitier(L) == isDroitier(L)@pre
+	 comportement(L) == Comportement.WALKER
+	 x(L) == x(L)@pre
+	 y(L) == y(L)@pre
+	 falling(L) == falling(L)@pre
+	 gameEng(L) == gameEng(L)@pre
+	 isDead(L) == isDead(L)@pre
+	 isSaved(L) == isSaved(L)@pre
+	 dalles(L) == dalles(L)@pre
+	 builderDelay(L) == builderDelay(L)@pre
+	 bomberDelay(L) == bomberDelay(L)@pre
+	 basherDelay(L) == basherDelay(L)@pre
+--------------------------------------------------------------------------------
+[Test 3.2]: testChangeComportement2 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+	
+	c = {Comportement.WALKER}
+	L = init(c,G)
+Operations : 
+	changeComportement(Comportement.FALLER)
+Oracle : 
+	 isDroitier(L) == isDroitier(L)@pre
+	 comportement(L) == Comportement.FALLER
+	 x(L) == x(L)@pre
+	 y(L) == y(L)@pre
+	 falling(L) == falling(L)@pre
+	 gameEng(L) == gameEng(L)@pre
+	 isDead(L) == isDead(L)@pre
+	 isSaved(L) == isSaved(L)@pre
+	 dalles(L) == dalles(L)@pre
+	 builderDelay(L) == builderDelay(L)@pre
+	 bomberDelay(L) == bomberDelay(L)@pre
+	 basherDelay(L) == basherDelay(L)@pre
+--------------------------------------------------------------------------------
+[Test 3.2]: testChangeComportement2 | Positif
+
+Conditions initiales :
+	WIDTH = 13
+	HEIGHT = 11
+	
+	X_ENTRANCE = 2
+	Y_ENTRANCE = 2
+	X_EXIT = 10
+	Y_EXIT = 9
+	
+	SIZE_COLONY = 5
+	SPAWN_SPEED = 2
+	V= ILevel::init(WIDTH, HEIGHT)
+	
+	if (ILevel::isEditing()) {
+		ILevel::setNature(L, 1, 4, Nature.METAL)
+		ILevel::setNature(L, 2, 4, Nature.METAL)
+		ILevel::setNature(L, 3, 4, Nature.METAL)
+		ILevel::setNature(L, 4, 4, Nature.METAL)
+		ILevel::setNature(L, 5, 4, Nature.METAL)
+		ILevel::setNature(L, 6, 4, Nature.METAL)
+		ILevel::setNature(L, 7, 4, Nature.METAL)
+		ILevel::setNature(L, 8, 4, Nature.METAL)
+		ILevel::setNature(L, 9, 4, Nature.METAL)
+		ILevel::setNature(L, 10, 4, Nature.METAL)
+		
+		ILevel::setNature(L, 2, 7, Nature.METAL)
+		ILevel::setNature(L, 3, 7, Nature.METAL)
+		ILevel::setNature(L, 4, 7, Nature.METAL)
+		ILevel::setNature(L, 5, 7, Nature.METAL)
+		ILevel::setNature(L, 6, 7, Nature.METAL)
+		ILevel::setNature(L, 7, 7, Nature.METAL)
+		ILevel::setNature(L, 8, 7, Nature.METAL)
+		ILevel::setNature(L, 9, 7, Nature.METAL)
+		ILevel::setNature(L, 10, 7, Nature.METAL)
+		ILevel::setNature(L, 11, 7, Nature.METAL)
+	}
+	
+	ILevel::goPlay(X_ENTRANCE, Y_ENTRANCE, X_EXIT, Y_EXIT)
+	
+	J = IJoueur::init("PlayerLambda", 8)
+	
+	G = IGameEng::init(1,10,V,J)
+	
+	c = {Comportement.WALKER}
+	L = init(c,G)
+Operations : 
+	changeComportement(Comportement.FALLER)
+	changeComportement(Comportement.DIGGER)
+Oracle : 
+	 isDroitier(L) == isDroitier(L)@pre
+	 comportement(L) == Comportement.DIGGER
+	 x(L) == x(L)@pre
+	 y(L) == y(L)@pre
+	 falling(L) == falling(L)@pre
+	 gameEng(L) == gameEng(L)@pre
+	 isDead(L) == isDead(L)@pre
+	 isSaved(L) == isSaved(L)@pre
+	 dalles(L) == dalles(L)@pre
+	 builderDelay(L) == builderDelay(L)@pre
+	 bomberDelay(L) == bomberDelay(L)@pre
+	 basherDelay(L) == basherDelay(L)@pre

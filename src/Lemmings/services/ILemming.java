@@ -29,6 +29,7 @@ public interface ILemming {
 	// INVARIANTS --------------------------------------------------------------
 	/**
 	 *  \inv : 0 <= getFalling() <= IGameEng::ILevel::getHeight()-2;
+	 *  \inv : card(getComportement()) <= 4
 	 *  \inv : 0 < getX() <= IGameEng::ILevel::getWidht()-2 ;
 	 *  \inv : 0 < getY() < = IGameEng::ILevel::getHeight()-2;
 	 *  \inv : isDead() == {
@@ -45,10 +46,16 @@ public interface ILemming {
 	 */ 
 	
 	
-	
+	//non cumulable: WALKER, FALLER, DIGGER, BUILDER, STOPPER, BASHER
+	//cumulable : CLIMBER, FLOATER, BOMBER
 	// CONSTRUCTORS ------------------------------------------------------------
 	/**
 	 *  \pre :  card(c) > 0
+	 *  \pre : (WALKER && FALLER) NOT IN c && (WALKER && DIGGER) NOT IN c && (WALKER && BUILDER) NOT IN c && (WALKER && STOPPER) NOT IN c && (WALKER && BASHER) NOT IN c
+	 *                                     && (FALLER && DIGGER) NOT IN c && (FALLER && BUILDER) NOT IN c && (FALLER && STOPPER) NOT IN c && (FALLER && BASHER) NOT IN c
+	 *                                                                    && (DIGGER && BUILDER) NOT IN c && (DIGGER && STOPPER) NOT IN c && (DIGGER && BASHER) NOT IN c
+	 *                                                                    							      && (BUILDER && STOPPER) NOT IN c && (BUILDER && BASHER) NOT IN c
+	 *                                                                    																   && (STOPPER && BASHER) NOT IN c
 	 *  \post : isDroitier(init(c,core)) == True
 	 *  \post : getComportement(init(c,core)) == c
 	 *  \post : getX(init(c,core)) == IGameEng::ILevel::getXEntrance()

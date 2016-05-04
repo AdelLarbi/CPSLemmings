@@ -9,7 +9,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 	TestContractLevelInitCondition.class,
 	TestContractLevel.class,
-	TestContractGameEng.class
+	TestContractGameEng.class, 
+	TestContractLemming.class
 })
 
 public class TestsWithContract {
